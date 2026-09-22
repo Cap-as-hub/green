@@ -3,797 +3,871 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GREEN - a practical one-page lawn growing guide with calculators, seasonal calendar and lawn journey gallery." />
-  <title>GREEN — Lawn Growing Guide</title>
+  <meta name="description" content="GREEN — a practical lawn guide for soil preparation, seed selection, sowing, watering, fertilizing, troubleshooting and seasonal maintenance." />
+  <title>GREEN — Complete Lawn Growing Guide</title>
   <style>
     :root {
-      --bg: #f4f8f2;
-      --surface: #ffffff;
-      --surface-2: #e9f3e7;
-      --text: #17301c;
-      --muted: #627367;
-      --accent: #2f7d43;
-      --accent-dark: #215b31;
-      --line: #dbe7d9;
-      --shadow: 0 20px 50px rgba(23, 56, 30, 0.10);
-      --radius: 22px;
-      --max: 1160px;
+      --bg:#f4f8f2;
+      --surface:#ffffff;
+      --surface-soft:#edf5ea;
+      --text:#17301c;
+      --muted:#627367;
+      --accent:#2f7d43;
+      --accent-dark:#205b31;
+      --accent-light:#dceedd;
+      --line:#d9e6d7;
+      --warn:#7c5b18;
+      --warn-bg:#fff7dc;
+      --danger:#8d3b2d;
+      --danger-bg:#fff0eb;
+      --shadow:0 18px 50px rgba(23,56,30,.09);
+      --radius:22px;
+      --max:1180px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.65;
+    }
+    img{display:block;width:100%}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(calc(100% - 32px),var(--max));margin-inline:auto}
+
+    .site-header{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(244,248,242,.9);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(217,230,215,.9);
+    }
+    .nav{
+      min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px
+    }
+    .brand{
+      font-weight:900;letter-spacing:.14em;color:var(--accent-dark);font-size:1.02rem
+    }
+    .nav-links{
+      display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-weight:700;font-size:.9rem
+    }
+    .nav-links a:hover{color:var(--accent)}
+
+    .hero{padding:82px 0 54px}
+    .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:48px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
+      background:var(--surface-soft);color:var(--accent-dark);font-weight:800;
+      font-size:.82rem;letter-spacing:.08em;text-transform:uppercase
+    }
+    h1{margin:18px 0 18px;font-size:clamp(2.7rem,7vw,5.35rem);line-height:.95;letter-spacing:-.06em}
+    .hero p{margin:0 0 28px;color:var(--muted);font-size:clamp(1rem,2vw,1.14rem);max-width:650px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .button{
+      display:inline-flex;align-items:center;justify-content:center;min-height:48px;
+      padding:0 18px;border-radius:14px;font-weight:800;border:1px solid transparent;transition:.2s ease
+    }
+    .button.primary{background:var(--accent);color:#fff;box-shadow:0 12px 30px rgba(47,125,67,.23)}
+    .button.primary:hover{background:var(--accent-dark);transform:translateY(-1px)}
+    .button.secondary{background:#fff;border-color:var(--line)}
+    .hero-card{overflow:hidden;border-radius:28px;background:#fff;box-shadow:var(--shadow)}
+    .hero-card img{aspect-ratio:4/5;object-fit:cover}
+    .hero-card .caption{padding:15px 18px 18px;color:var(--muted);font-size:.92rem}
+
+    section{padding:70px 0}
+    .section-head{
+      display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px
+    }
+    .section-head h2{margin:0;font-size:clamp(2rem,4vw,3rem);line-height:1.05;letter-spacing:-.04em}
+    .section-head p{margin:0;max-width:650px;color:var(--muted)}
+
+    .grid-2,.grid-3,.grid-4,.grid-5{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .grid-5{grid-template-columns:repeat(5,1fr)}
+
+    .card{
+      padding:24px;border-radius:var(--radius);background:var(--surface);
+      border:1px solid var(--line);box-shadow:0 9px 28px rgba(23,56,30,.045)
+    }
+    .card h3{margin:0 0 8px;font-size:1.15rem}
+    .card p,.card li{color:var(--muted)}
+    .card ul{padding-left:18px;margin-bottom:0}
+    .icon{
+      width:44px;height:44px;display:grid;place-items:center;border-radius:14px;
+      background:var(--surface-soft);font-size:1.25rem;margin-bottom:16px
     }
 
-    img { display: block; width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(calc(100% - 32px), var(--max)); margin-inline: auto; }
+    .process{display:grid;gap:14px}
+    .step{
+      display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;
+      padding:22px;border-radius:20px;background:#fff;border:1px solid var(--line)
+    }
+    .step-no{
+      width:50px;height:50px;display:grid;place-items:center;border-radius:15px;
+      background:var(--accent);color:#fff;font-weight:900
+    }
+    .step h3{margin:2px 0 6px}
+    .step p{margin:0;color:var(--muted)}
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(244,248,242,.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(219,231,217,.9);
+    .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .calculator{
+      padding:28px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)
+    }
+    .calculator h3{margin:0 0 7px;font-size:1.3rem}
+    .calculator p{margin:0 0 18px;color:var(--muted)}
+    .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+    label{display:block;margin-bottom:8px;font-size:.9rem;font-weight:800}
+    input,select{
+      width:100%;min-height:48px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);
+      background:#fff;color:var(--text);font:inherit
+    }
+    .result-box{
+      padding:17px 18px;border-radius:18px;background:var(--surface-soft);display:grid;gap:8px
+    }
+    .result-box strong{font-size:1.65rem;color:var(--accent-dark);line-height:1}
+    .note{
+      margin-top:14px;padding:13px 14px;border-radius:14px;background:#f8fbf7;color:var(--muted);
+      border:1px dashed var(--line);font-size:.9rem
     }
 
-    .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
+    .table-wrap{overflow-x:auto;border-radius:20px;border:1px solid var(--line);background:#fff}
+    table{width:100%;border-collapse:collapse;min-width:860px}
+    th,td{padding:15px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+    th{background:#f0f6ee;color:var(--accent-dark);font-size:.9rem}
+    td{color:var(--muted);font-size:.94rem}
+    tr:last-child td{border-bottom:none}
+    .good{font-weight:800;color:var(--accent-dark)}
+
+    .species-card{
+      padding:22px;border-radius:20px;background:#fff;border:1px solid var(--line)
+    }
+    .species-card h3{margin:0 0 8px;font-size:1.05rem}
+    .latin{font-style:italic;color:var(--muted);font-size:.9rem;margin-bottom:10px}
+    .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    .tag{
+      display:inline-flex;padding:5px 9px;border-radius:999px;background:var(--surface-soft);
+      color:var(--accent-dark);font-size:.78rem;font-weight:800
     }
 
-    .brand {
-      font-weight: 900;
-      letter-spacing: .14em;
-      color: var(--accent-dark);
-      font-size: 1.02rem;
+    .calendar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .season-card{
+      padding:24px;border-radius:22px;background:linear-gradient(180deg,#fff,#f3f8f1);
+      border:1px solid var(--line);box-shadow:0 10px 26px rgba(23,56,30,.045)
+    }
+    .season-card h3{margin:0 0 10px;font-size:1.18rem}
+    .season-card ul{margin:0;padding-left:18px}
+    .season-card li{color:var(--muted);margin-bottom:6px}
+
+    .fert-plan{display:grid;gap:14px}
+    .fert-row{
+      display:grid;grid-template-columns:150px 1fr 1fr;gap:16px;align-items:start;
+      padding:20px;border-radius:20px;background:#fff;border:1px solid var(--line)
+    }
+    .fert-time{font-weight:900;color:var(--accent-dark)}
+    .fert-row h4{margin:0 0 4px}
+    .fert-row p{margin:0;color:var(--muted)}
+
+    .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    details{
+      background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px
+    }
+    details+details{margin-top:12px}
+    summary{cursor:pointer;font-weight:850;color:var(--text)}
+    details p,details li{color:var(--muted)}
+    .warning{
+      padding:16px 18px;border-radius:16px;background:var(--warn-bg);color:var(--warn);border:1px solid #ead79c
+    }
+    .danger{
+      padding:16px 18px;border-radius:16px;background:var(--danger-bg);color:var(--danger);border:1px solid #efc8bd
     }
 
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-size: .94rem;
-      font-weight: 700;
+    .journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .journey-card{
+      overflow:hidden;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)
     }
-
-    .nav-links a:hover { color: var(--accent); }
-
-    .hero {
-      padding: 84px 0 56px;
+    .journey-card img{aspect-ratio:4/3;object-fit:cover}
+    .journey-body{padding:18px 18px 20px}
+    .journey-step{
+      display:inline-flex;padding:6px 10px;border-radius:999px;background:var(--surface-soft);
+      color:var(--accent-dark);font-size:.77rem;font-weight:850;text-transform:uppercase;letter-spacing:.05em
     }
+    .journey-body h3{margin:8px 0 6px}
+    .journey-body p{margin:0;color:var(--muted)}
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 48px;
-      align-items: center;
+    .cta{
+      padding:30px;border-radius:26px;background:linear-gradient(135deg,#245f36,#3d8e53);color:#fff
     }
+    .cta h2{margin:0 0 10px;font-size:clamp(2rem,4vw,3rem);line-height:1.05}
+    .cta p{margin:0;color:rgba(255,255,255,.84);max-width:850px}
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--surface-2);
-      color: var(--accent-dark);
-      font-size: .84rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+    footer{padding:34px 0 44px;color:var(--muted);font-size:.9rem}
+    .footer-row{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:24px}
+
+    @media (max-width:1080px){
+      .grid-5{grid-template-columns:repeat(2,1fr)}
+      .calendar-grid{grid-template-columns:repeat(2,1fr)}
+      .fert-row{grid-template-columns:120px 1fr}
+      .fert-row>div:last-child{grid-column:2}
     }
-
-    h1 {
-      margin: 18px 0 18px;
-      font-size: clamp(2.7rem, 7vw, 5.4rem);
-      line-height: .95;
-      letter-spacing: -.06em;
+    @media (max-width:900px){
+      .hero-grid,.calculator-grid,.grid-3,.journey-grid,.problem-grid{grid-template-columns:1fr}
+      .hero-card img{aspect-ratio:16/10}
+      .section-head{flex-direction:column;align-items:start}
     }
-
-    .hero p {
-      margin: 0 0 28px;
-      max-width: 620px;
-      color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.14rem);
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 14px;
-      border: 1px solid transparent;
-      font-weight: 800;
-      transition: .2s ease;
-    }
-
-    .button.primary {
-      color: white;
-      background: var(--accent);
-      box-shadow: 0 12px 30px rgba(47,125,67,.24);
-    }
-
-    .button.primary:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
-    }
-
-    .button.secondary {
-      background: rgba(255,255,255,.7);
-      border-color: var(--line);
-    }
-
-    .hero-card {
-      overflow: hidden;
-      border-radius: 28px;
-      background: var(--surface);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card img { aspect-ratio: 4/5; object-fit: cover; }
-    .hero-card .caption {
-      padding: 16px 18px 18px;
-      color: var(--muted);
-      font-size: .92rem;
-    }
-
-    section { padding: 72px 0; }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 28px;
-    }
-
-    .section-head h2 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -.04em;
-    }
-
-    .section-head p {
-      margin: 0;
-      max-width: 620px;
-      color: var(--muted);
-    }
-
-    .grid-3, .grid-4 {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-
-    .card {
-      padding: 24px;
-      border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 28px rgba(23,56,30,.05);
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1.16rem;
-    }
-
-    .card p, .card li {
-      color: var(--muted);
-      font-size: .96rem;
-    }
-
-    .icon {
-      width: 44px; height: 44px;
-      display: grid; place-items: center;
-      margin-bottom: 16px;
-      border-radius: 14px;
-      background: var(--surface-2);
-      font-size: 1.25rem;
-    }
-
-    .calculator-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .calculator {
-      padding: 28px;
-      border-radius: 24px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .calculator h3 {
-      margin: 0 0 8px;
-      font-size: 1.3rem;
-    }
-
-    .calculator p {
-      margin: 0 0 18px;
-      color: var(--muted);
-    }
-
-    .field-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: .9rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    input {
-      width: 100%;
-      min-height: 48px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: #fff;
-      font-size: 1rem;
-      color: var(--text);
-    }
-
-    .result-box {
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: var(--surface-2);
-      display: grid;
-      gap: 8px;
-    }
-
-    .result-box strong {
-      font-size: 1.6rem;
-      line-height: 1;
-      color: var(--accent-dark);
-    }
-
-    .types-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-    }
-
-    .type-card {
-      padding: 22px;
-      border-radius: 20px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: 0 8px 24px rgba(23,56,30,.05);
-    }
-
-    .type-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-    }
-
-    .type-card ul {
-      padding-left: 18px;
-      margin: 0;
-    }
-
-    .calendar-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .season-card {
-      padding: 24px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, #ffffff, #f3f8f1);
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 28px rgba(23,56,30,.05);
-    }
-
-    .season-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.18rem;
-    }
-
-    .season-card ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .journey-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .journey-card {
-      overflow: hidden;
-      border-radius: 24px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .journey-card img {
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-    }
-
-    .journey-body {
-      padding: 18px 18px 20px;
-    }
-
-    .journey-step {
-      display: inline-block;
-      margin-bottom: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--surface-2);
-      color: var(--accent-dark);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-    }
-
-    .journey-body h3 {
-      margin: 0 0 8px;
-      font-size: 1.12rem;
-    }
-
-    .journey-body p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .upload-box {
-      padding: 28px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, #245f36, #3d8e53);
-      color: white;
-    }
-
-    .upload-box h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.05;
-    }
-
-    .upload-box p,
-    .upload-box li { color: rgba(255,255,255,.86); }
-    .upload-box ol { margin: 14px 0 0; padding-left: 20px; }
-
-    footer {
-      padding: 34px 0 44px;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      border-top: 1px solid var(--line);
-      padding-top: 24px;
-    }
-
-    @media (max-width: 1100px) {
-      .types-grid { grid-template-columns: repeat(2, 1fr); }
-      .calendar-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 920px) {
-      .hero-grid, .calculator-grid, .grid-3, .journey-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-card img { aspect-ratio: 16/10; }
-      .section-head { align-items: start; flex-direction: column; }
-    }
-
-    @media (max-width: 720px) {
-      .field-grid, .types-grid, .calendar-grid {
-        grid-template-columns: 1fr;
-      }
-      .nav-links { gap: 14px; font-size: .84rem; }
-      .nav { min-height: 64px; }
-      .hero { padding-top: 42px; }
-      section { padding: 56px 0; }
-      .footer-row { flex-direction: column; }
+    @media (max-width:700px){
+      .nav-links{gap:12px;font-size:.82rem}
+      .hero{padding-top:40px}
+      section{padding:54px 0}
+      .field-grid,.grid-2,.grid-4,.grid-5,.calendar-grid{grid-template-columns:1fr}
+      .step{grid-template-columns:52px 1fr}
+      .step-no{width:42px;height:42px}
+      .fert-row{grid-template-columns:1fr}
+      .fert-row>div:last-child{grid-column:auto}
+      .footer-row{flex-direction:column}
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top">GREEN</a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#calculators">Calculators</a>
-        <a href="#types">Grass Types</a>
-        <a href="#calendar">Calendar</a>
-        <a href="#journey">Journey</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top">GREEN</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#process">Process</a>
+      <a href="#calculators">Calculators</a>
+      <a href="#grass-types">Grass Types</a>
+      <a href="#fertilizing">Fertilizing</a>
+      <a href="#problems">Problems</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#journey">Journey</a>
+    </nav>
+  </div>
+</header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Practical lawn guide</span>
+        <h1>From bare soil to a strong, healthy lawn.</h1>
+        <p>
+          A complete guide for preparing the soil, choosing the right grass seed mixture,
+          sowing, watering, fertilizing, fixing brown or thin areas, and maintaining a lawn
+          through the seasons.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#process">Start with the process</a>
+          <a class="button secondary" href="#grass-types">Choose a grass type</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="images/lush-lawn.png" alt="Healthy established green lawn">
+        <div class="caption">A dense lawn is built through preparation, suitable seed choice and consistent care.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-head">
         <div>
-          <span class="eyebrow">From soil to healthy lawn</span>
-          <h1>Grow a lawn with a clear plan.</h1>
-          <p>
-            GREEN is a simple one-page guide about lawn preparation, seeding,
-            watering, early care and ongoing maintenance. It also includes practical
-            calculators, a seasonal calendar and a visual lawn journey.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#calculators">Use calculators</a>
-            <a class="button secondary" href="#journey">See lawn journey</a>
-          </div>
+          <span class="eyebrow">Step by step</span>
+          <h2>How to establish a lawn</h2>
         </div>
-
-        <div class="hero-card">
-          <img src="images/lush-lawn.png" alt="Healthy established green lawn" />
-          <div class="caption">A healthy lawn starts with good preparation and consistent care.</div>
-        </div>
+        <p>
+          The quality of a new lawn is determined mainly by soil preparation, seed-to-soil contact,
+          watering during germination, and correct early mowing.
+        </p>
       </div>
-    </section>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-head">
+      <div class="process">
+        <article class="step">
+          <div class="step-no">01</div>
           <div>
-            <span class="eyebrow">Project overview</span>
-            <h2>Build your lawn step by step.</h2>
+            <h3>Clear and inspect the area</h3>
+            <p>Remove construction debris, stones, perennial weeds, old turf and roots. Check drainage before adding the final soil layer.</p>
           </div>
-          <p>
-            A successful lawn project usually follows the same logic: prepare the area,
-            choose the right seed mix, sow evenly, keep the surface moist, repair thin spots,
-            and mow only when the grass is ready.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="icon">🌱</div>
-            <h3>Start with the soil</h3>
-            <p>Remove debris, weeds and stones, level the ground and create a fine seedbed with good seed-to-soil contact.</p>
-          </article>
-          <article class="card">
-            <div class="icon">💧</div>
-            <h3>Water consistently</h3>
-            <p>Freshly seeded ground should stay evenly moist. Light, frequent watering is better than strong washing streams.</p>
-          </article>
-          <article class="card">
-            <div class="icon">✂️</div>
-            <h3>Manage early growth</h3>
-            <p>Reseed empty patches when needed and wait for the right moment before the first mowing.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="calculators">
-      <div class="container">
-        <div class="section-head">
+        </article>
+        <article class="step">
+          <div class="step-no">02</div>
           <div>
-            <span class="eyebrow">Practical tools</span>
-            <h2>Seed & fertilizer calculators</h2>
+            <h3>Prepare the topsoil</h3>
+            <p>Loosen compacted ground, level the area and create a fine, even seedbed. Avoid leaving deep soft spots that will settle later.</p>
           </div>
-          <p>
-            Use these simple calculators to estimate how much grass seed and starter fertilizer
-            you may need for your lawn area.
-          </p>
-        </div>
-
-        <div class="calculator-grid">
-          <article class="calculator">
-            <h3>Lawn Seed Calculator</h3>
-            <p>Enter your lawn area and the chosen seeding rate.</p>
-            <div class="field-grid">
-              <div>
-                <label for="seed-area">Lawn area (m²)</label>
-                <input id="seed-area" type="number" min="0" value="100" />
-              </div>
-              <div>
-                <label for="seed-rate">Seeding rate (g/m²)</label>
-                <input id="seed-rate" type="number" min="0" value="30" />
-              </div>
-            </div>
-            <div class="result-box">
-              <span>Required grass seed</span>
-              <strong id="seed-result">3.00 kg</strong>
-              <span id="seed-detail">100 m² × 30 g/m² = 3000 g</span>
-            </div>
-          </article>
-
-          <article class="calculator">
-            <h3>Fertilizer Calculator</h3>
-            <p>Estimate starter fertilizer or seasonal feed based on application rate.</p>
-            <div class="field-grid">
-              <div>
-                <label for="fert-area">Lawn area (m²)</label>
-                <input id="fert-area" type="number" min="0" value="100" />
-              </div>
-              <div>
-                <label for="fert-rate">Application rate (g/m²)</label>
-                <input id="fert-rate" type="number" min="0" value="25" />
-              </div>
-            </div>
-            <div class="result-box">
-              <span>Required fertilizer</span>
-              <strong id="fert-result">2.50 kg</strong>
-              <span id="fert-detail">100 m² × 25 g/m² = 2500 g</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="types">
-      <div class="container">
-        <div class="section-head">
+        </article>
+        <article class="step">
+          <div class="step-no">03</div>
           <div>
-            <span class="eyebrow">Choosing the right mix</span>
-            <h2>Grass types and seed mix purposes</h2>
+            <h3>Firm and level</h3>
+            <p>Lightly roll or firm the soil. The surface should be stable enough not to sink deeply underfoot, but still loose enough for roots to penetrate.</p>
           </div>
-          <p>
-            Different seed mixes are designed for different needs: quick repair, slow growth,
-            family use, shade tolerance or heavy traffic.
-          </p>
-        </div>
-
-        <div class="types-grid">
-          <article class="type-card">
-            <h3>Quick Germination Mix</h3>
-            <ul>
-              <li>Fast early coverage</li>
-              <li>Good for quick results</li>
-              <li>Useful for patch repair</li>
-            </ul>
-          </article>
-          <article class="type-card">
-            <h3>Slow-Growing Mix</h3>
-            <ul>
-              <li>Lower mowing frequency</li>
-              <li>Often more decorative</li>
-              <li>Suitable for low-maintenance lawns</li>
-            </ul>
-          </article>
-          <article class="type-card">
-            <h3>Family / Play Lawn</h3>
-            <ul>
-              <li>Balanced appearance and durability</li>
-              <li>Good for home gardens</li>
-              <li>Handles regular walking</li>
-            </ul>
-          </article>
-          <article class="type-card">
-            <h3>Sports / High-Traffic Mix</h3>
-            <ul>
-              <li>Strong wear tolerance</li>
-              <li>Best for active use</li>
-              <li>Suitable for play areas and sport-style lawns</li>
-            </ul>
-          </article>
-          <article class="type-card">
-            <h3>Shade-Tolerant Mix</h3>
-            <ul>
-              <li>Better for less sunny areas</li>
-              <li>Useful near fences and trees</li>
-              <li>Often slower to establish</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="calendar">
-      <div class="container">
-        <div class="section-head">
+        </article>
+        <article class="step">
+          <div class="step-no">04</div>
           <div>
-            <span class="eyebrow">Year-round care</span>
-            <h2>Seasonal Lawn Calendar</h2>
+            <h3>Choose the correct seed mix</h3>
+            <p>Select according to use: decorative, family, sport/high traffic, shade, drought-tolerant or low-maintenance. The species composition matters more than the picture on the bag.</p>
           </div>
-          <p>
-            This simple seasonal overview helps you understand what to focus on during each part of the year.
-          </p>
-        </div>
-
-        <div class="calendar-grid">
-          <article class="season-card">
-            <h3>Spring</h3>
-            <ul>
-              <li>Clean debris and inspect winter damage</li>
-              <li>Rake lightly and repair bare spots</li>
-              <li>Apply spring fertilizer if needed</li>
-              <li>Start regular mowing as growth increases</li>
-            </ul>
-          </article>
-          <article class="season-card">
-            <h3>Summer</h3>
-            <ul>
-              <li>Water deeply and consistently</li>
-              <li>Mow regularly, but do not cut too short</li>
-              <li>Watch for stress, yellowing and dry areas</li>
-              <li>Limit heavy work during extreme heat</li>
-            </ul>
-          </article>
-          <article class="season-card">
-            <h3>Autumn</h3>
-            <ul>
-              <li>Best time for overseeding and repair</li>
-              <li>Fertilize to strengthen roots</li>
-              <li>Remove falling leaves</li>
-              <li>Prepare lawn for colder months</li>
-            </ul>
-          </article>
-          <article class="season-card">
-            <h3>Winter</h3>
-            <ul>
-              <li>Avoid unnecessary traffic on frozen grass</li>
-              <li>Do not work wet or frozen soil</li>
-              <li>Plan seed type and spring repairs</li>
-              <li>Service mower and tools for the next season</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="journey">
-      <div class="container">
-        <div class="section-head">
+        </article>
+        <article class="step">
+          <div class="step-no">05</div>
           <div>
-            <span class="eyebrow">Progress gallery</span>
-            <h2>My Lawn Journey</h2>
+            <h3>Sow evenly</h3>
+            <p>Divide the seed into two equal portions and sow in crossing directions. Lightly rake or press the seed into the surface for good soil contact.</p>
           </div>
-          <p>
-            A simple six-step visual story: from prepared ground to watering, germination,
-            fully grown grass, reseeding empty areas and first mowing.
-          </p>
-        </div>
-
-        <div class="journey-grid">
-          <article class="journey-card">
-            <img src="images/prepared-soil.png" alt="Prepared lawn area with level soil" />
-            <div class="journey-body">
-              <span class="journey-step">Step 1</span>
-              <h3>Prepared Soil</h3>
-              <p>The area is cleared, levelled and ready for seed.</p>
-            </div>
-          </article>
-
-          <article class="journey-card">
-            <img src="images/watering-process.png" alt="Watering freshly prepared lawn area" />
-            <div class="journey-body">
-              <span class="journey-step">Step 2</span>
-              <h3>Watering Process</h3>
-              <p>Freshly seeded ground is watered gently to keep the surface moist.</p>
-            </div>
-          </article>
-
-          <article class="journey-card">
-            <img src="images/first-seedlings.png" alt="First grass seedlings appearing" />
-            <div class="journey-body">
-              <span class="journey-step">Step 3</span>
-              <h3>First Seedlings</h3>
-              <p>Young grass begins to emerge across the lawn area.</p>
-            </div>
-          </article>
-
-          <article class="journey-card">
-            <img src="images/lush-lawn.png" alt="Lush green lawn after successful growth" />
-            <div class="journey-body">
-              <span class="journey-step">Step 4</span>
-              <h3>Lush Green Grass</h3>
-              <p>The lawn fills in and develops into a healthy green surface.</p>
-            </div>
-          </article>
-
-          <article class="journey-card">
-            <img src="images/reseeding-patches.png" alt="Reseeding process in sparse lawn areas" />
-            <div class="journey-body">
-              <span class="journey-step">Step 5</span>
-              <h3>Reseeding Thin Areas</h3>
-              <p>Empty or weak patches are overseeded to improve uniform coverage.</p>
-            </div>
-          </article>
-
-          <article class="journey-card">
-            <img src="images/first-mowing.png" alt="First lawn mowing after grass establishment" />
-            <div class="journey-body">
-              <span class="journey-step">Step 6</span>
-              <h3>First Mowing</h3>
-              <p>The first cut is done only after the grass is established and strong enough.</p>
-            </div>
-          </article>
-        </div>
+        </article>
+        <article class="step">
+          <div class="step-no">06</div>
+          <div>
+            <h3>Keep the surface moist</h3>
+            <p>During germination, water lightly and frequently enough that the top layer does not dry out. Avoid heavy streams that move the seed.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-no">07</div>
+          <div>
+            <h3>Repair thin areas</h3>
+            <p>After establishment, identify sparse or bare areas. Loosen the surface, add seed, press it in and maintain moisture until the repair germinates.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-no">08</div>
+          <div>
+            <h3>First mowing</h3>
+            <p>Make the first cut when the grass is firmly rooted and has reached roughly 8–10 cm. Cut only the upper third and use a sharp mower blade.</p>
+          </div>
+        </article>
       </div>
-    </section>
-
-    <section id="upload">
-      <div class="container">
-        <div class="upload-box">
-          <h2>How to upload and replace the photos</h2>
-          <p>
-            This website is already prepared to load photos from the <strong>images</strong> folder.
-            If you later want to replace the current pictures with your own, follow these steps:
-          </p>
-          <ol>
-            <li>Open your GitHub repository <strong>green</strong>.</li>
-            <li>Upload the new files into the <strong>images</strong> folder.</li>
-            <li>Keep the same file names, or change the file names in <strong>index.html</strong>.</li>
-            <li>Commit the changes in GitHub.</li>
-            <li>Vercel will automatically redeploy the updated website.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-row">
-      <div>GREEN — Lawn Growing Guide</div>
-      <div>© <span id="year"></span> • Responsive one-page website</div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const byId = (id) => document.getElementById(id);
+  <section id="calculators">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Practical tools</span>
+          <h2>Seed & fertilizer calculators</h2>
+        </div>
+        <p>Use the calculators as planning tools. Always compare the result with the application rate printed on the seed or fertilizer package.</p>
+      </div>
 
-    function updateSeedCalculator() {
-      const area = parseFloat(byId('seed-area').value) || 0;
-      const rate = parseFloat(byId('seed-rate').value) || 0;
-      const grams = area * rate;
-      const kg = grams / 1000;
-      byId('seed-result').textContent = kg.toFixed(2) + ' kg';
-      byId('seed-detail').textContent = `${area} m² × ${rate} g/m² = ${grams.toFixed(0)} g`;
-    }
+      <div class="calculator-grid">
+        <article class="calculator">
+          <h3>Lawn Seed Calculator</h3>
+          <p>Estimate how many kilograms of seed are required for the selected area.</p>
+          <div class="field-grid">
+            <div>
+              <label for="seed-area">Lawn area (m²)</label>
+              <input id="seed-area" type="number" min="0" value="100">
+            </div>
+            <div>
+              <label for="seed-rate">Seeding rate (g/m²)</label>
+              <input id="seed-rate" type="number" min="0" value="30">
+            </div>
+          </div>
+          <div class="result-box">
+            <span>Required seed</span>
+            <strong id="seed-result">3.00 kg</strong>
+            <span id="seed-detail"></span>
+          </div>
+          <div class="note">Typical new-lawn rates are often around 25–40 g/m², but use the rate specified for your exact mixture.</div>
+        </article>
 
-    function updateFertilizerCalculator() {
-      const area = parseFloat(byId('fert-area').value) || 0;
-      const rate = parseFloat(byId('fert-rate').value) || 0;
-      const grams = area * rate;
-      const kg = grams / 1000;
-      byId('fert-result').textContent = kg.toFixed(2) + ' kg';
-      byId('fert-detail').textContent = `${area} m² × ${rate} g/m² = ${grams.toFixed(0)} g`;
-    }
+        <article class="calculator">
+          <h3>Fertilizer Quantity Calculator</h3>
+          <p>Estimate product quantity from the package application rate.</p>
+          <div class="field-grid">
+            <div>
+              <label for="fert-area">Lawn area (m²)</label>
+              <input id="fert-area" type="number" min="0" value="100">
+            </div>
+            <div>
+              <label for="fert-rate">Product rate (g/m²)</label>
+              <input id="fert-rate" type="number" min="0" value="25">
+            </div>
+          </div>
+          <div class="result-box">
+            <span>Required fertilizer product</span>
+            <strong id="fert-result">2.50 kg</strong>
+            <span id="fert-detail"></span>
+          </div>
+          <div class="note">Do not increase the dose to make the lawn greener faster. Excess fertilizer can burn grass and increase disease risk.</div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    ['seed-area', 'seed-rate'].forEach(id => byId(id).addEventListener('input', updateSeedCalculator));
-    ['fert-area', 'fert-rate'].forEach(id => byId(id).addEventListener('input', updateFertilizerCalculator));
+  <section id="grass-types">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Seed selection</span>
+          <h2>Grass species and lawn mixtures</h2>
+        </div>
+        <p>
+          Most lawn seed products are mixtures of several cool-season grasses. The exact percentage varies by producer,
+          but the species listed below explain how a mixture will behave.
+        </p>
+      </div>
 
-    updateSeedCalculator();
-    updateFertilizerCalculator();
-    byId('year').textContent = new Date().getFullYear();
-  </script>
+      <div class="grid-5">
+        <article class="species-card">
+          <h3>Perennial ryegrass</h3>
+          <div class="latin">Lolium perenne</div>
+          <p>Very fast germination and strong wear tolerance. Excellent for quick establishment, family lawns, repairs and sports use.</p>
+          <div class="tag-row"><span class="tag">Fast</span><span class="tag">Wear tolerant</span><span class="tag">Frequent mowing</span></div>
+        </article>
+        <article class="species-card">
+          <h3>Kentucky bluegrass</h3>
+          <div class="latin">Poa pratensis</div>
+          <p>Forms underground rhizomes, which help the lawn recover from damage. Dense and durable once established, but slower to germinate.</p>
+          <div class="tag-row"><span class="tag">Dense</span><span class="tag">Self-repairing</span><span class="tag">Slower start</span></div>
+        </article>
+        <article class="species-card">
+          <h3>Red fescue</h3>
+          <div class="latin">Festuca rubra</div>
+          <p>Fine-leaved grass suited to decorative lawns, lower fertility and partial shade. Usually grows more slowly than ryegrass.</p>
+          <div class="tag-row"><span class="tag">Fine texture</span><span class="tag">Shade</span><span class="tag">Low maintenance</span></div>
+        </article>
+        <article class="species-card">
+          <h3>Tall fescue</h3>
+          <div class="latin">Festuca arundinacea</div>
+          <p>Deep-rooted and more tolerant of heat and drought. Useful where watering is limited or soil dries quickly.</p>
+          <div class="tag-row"><span class="tag">Drought tolerant</span><span class="tag">Deep roots</span><span class="tag">Robust</span></div>
+        </article>
+        <article class="species-card">
+          <h3>Fine fescues</h3>
+          <div class="latin">Festuca spp.</div>
+          <p>Includes hard, sheep and other fine fescues. Often used in low-maintenance, shade-tolerant and slower-growing mixtures.</p>
+          <div class="tag-row"><span class="tag">Low input</span><span class="tag">Shade tolerant</span><span class="tag">Slow growth</span></div>
+        </article>
+      </div>
+
+      <div style="height:22px"></div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Mixture type</th>
+              <th>Typical composition idea</th>
+              <th>Best use</th>
+              <th>Main strengths</th>
+              <th>What to watch for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="good">Quick establishment</td>
+              <td>High proportion of perennial ryegrass, often mixed with red fescue and/or bluegrass</td>
+              <td>Fast results, repairs, new lawns when speed matters</td>
+              <td>Rapid germination and quick green cover</td>
+              <td>Usually needs more mowing and may be less refined than slow decorative mixtures</td>
+            </tr>
+            <tr>
+              <td class="good">Family / universal lawn</td>
+              <td>Balanced ryegrass + red fescue + Kentucky bluegrass</td>
+              <td>Home gardens, children, pets, normal walking</td>
+              <td>Good balance of appearance, durability and recovery</td>
+              <td>Needs regular mowing and feeding for best density</td>
+            </tr>
+            <tr>
+              <td class="good">Sports / high traffic</td>
+              <td>High perennial ryegrass with Kentucky bluegrass; sometimes robust fescues</td>
+              <td>Play areas, training zones, high wear</td>
+              <td>Strong wear tolerance and recovery</td>
+              <td>Needs more water, nutrients and mowing under intensive use</td>
+            </tr>
+            <tr>
+              <td class="good">Decorative / fine lawn</td>
+              <td>Higher fine-fescue content, sometimes bluegrass; lower ryegrass</td>
+              <td>Front gardens, visual appearance, lighter traffic</td>
+              <td>Fine texture, dense refined look</td>
+              <td>Less suitable for constant heavy use</td>
+            </tr>
+            <tr>
+              <td class="good">Shade-tolerant lawn</td>
+              <td>Fine fescues + red fescue, sometimes shade-tolerant bluegrass types</td>
+              <td>Near trees, fences, north-facing areas</td>
+              <td>Better persistence with less direct sun</td>
+              <td>Even shade mixtures still need some light; dense tree roots may compete for water</td>
+            </tr>
+            <tr>
+              <td class="good">Low-maintenance / slow-growing</td>
+              <td>Higher share of fine fescues, hard fescue or sheep fescue</td>
+              <td>Areas where less mowing and lower fertilization are priorities</td>
+              <td>Slower growth and lower input requirement</td>
+              <td>Slower repair after heavy wear</td>
+            </tr>
+            <tr>
+              <td class="good">Dry / drought-prone site</td>
+              <td>Tall fescue dominant or mixed with drought-tolerant fine fescues</td>
+              <td>Sunny areas, sandy soil, limited irrigation</td>
+              <td>Deep rooting and better heat tolerance</td>
+              <td>Leaf texture can be coarser than decorative mixtures</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        Important: mixture percentages differ by brand and cultivar. Read the species list on the bag instead of relying only on labels such as “sport”, “premium” or “universal”.
+      </div>
+    </div>
+  </section>
+
+  <section id="fertilizing">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Nutrition</span>
+          <h2>When and how to fertilize</h2>
+        </div>
+        <p>
+          For cool-season lawns, growth is strongest in spring and autumn. Fertilizing should support that natural rhythm rather than force growth during heat or drought.
+        </p>
+      </div>
+
+      <div class="fert-plan">
+        <article class="fert-row">
+          <div class="fert-time">Early spring</div>
+          <div>
+            <h4>Goal: restart growth</h4>
+            <p>Use a spring lawn fertilizer with a moderate-to-higher nitrogen share once the lawn is actively growing. Avoid applying heavy nitrogen to frozen or waterlogged soil.</p>
+          </div>
+          <div>
+            <h4>Typical approach</h4>
+            <p>Choose an NPK product where nitrogen (N) is the dominant nutrient. Follow the package rate exactly and water in if required by the label.</p>
+          </div>
+        </article>
+
+        <article class="fert-row">
+          <div class="fert-time">Late spring</div>
+          <div>
+            <h4>Goal: density and colour</h4>
+            <p>A balanced lawn fertilizer can support leaf growth and recovery from spring wear. This is often the main growth period.</p>
+          </div>
+          <div>
+            <h4>Typical approach</h4>
+            <p>Moderate nitrogen with potassium. Phosphorus is most useful when soil testing or establishment needs justify it.</p>
+          </div>
+        </article>
+
+        <article class="fert-row">
+          <div class="fert-time">Summer</div>
+          <div>
+            <h4>Goal: avoid stress</h4>
+            <p>During hot, dry weather, reduce or postpone nitrogen fertilization. Pushing soft growth during drought can increase stress.</p>
+          </div>
+          <div>
+            <h4>Typical approach</h4>
+            <p>If the lawn is irrigated and actively growing, use a lighter dose. Otherwise wait for cooler, wetter conditions.</p>
+          </div>
+        </article>
+
+        <article class="fert-row">
+          <div class="fert-time">Early autumn</div>
+          <div>
+            <h4>Goal: recovery and root strength</h4>
+            <p>Autumn is a key feeding period for cool-season grass, especially after summer stress or overseeding.</p>
+          </div>
+          <div>
+            <h4>Typical approach</h4>
+            <p>Use a lawn fertilizer with useful nitrogen and potassium. Potassium supports stress tolerance and plant strength.</p>
+          </div>
+        </article>
+
+        <article class="fert-row">
+          <div class="fert-time">Late autumn</div>
+          <div>
+            <h4>Goal: prepare for winter</h4>
+            <p>Use only products intended for autumn/winter lawn feeding and only while the lawn is still physiologically active.</p>
+          </div>
+          <div>
+            <h4>Typical approach</h4>
+            <p>Lower nitrogen, higher potassium is common in autumn formulations. Avoid excessive late soft growth.</p>
+          </div>
+        </article>
+      </div>
+
+      <div style="height:18px"></div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">N</div>
+          <h3>Nitrogen</h3>
+          <p>Drives green leaf growth and colour. Too much can produce weak, soft growth, increase mowing demand and raise disease risk.</p>
+        </article>
+        <article class="card">
+          <div class="icon">P</div>
+          <h3>Phosphorus</h3>
+          <p>Important for root development, especially during establishment. Mature lawns often need less unless a soil test shows deficiency.</p>
+        </article>
+        <article class="card">
+          <div class="icon">K</div>
+          <h3>Potassium</h3>
+          <p>Supports stress tolerance, water regulation and winter hardiness. Often emphasized in autumn fertilizers.</p>
+        </article>
+      </div>
+
+      <div class="warning" style="margin-top:18px">
+        Never fertilize by guesswork. Use the product label rate, spread evenly, avoid overlap, and keep granules off paving. If the lawn is severely drought-stressed, wait until it recovers before applying strong nitrogen fertilizer.
+      </div>
+    </div>
+  </section>
+
+  <section id="problems">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Troubleshooting</span>
+          <h2>What to do when grass turns brown</h2>
+        </div>
+        <p>
+          Browning is a symptom, not a diagnosis. First look at the shape and location of the damage: uniform, circular, along edges, after fertilizing, after mowing, or only in compacted areas.
+        </p>
+      </div>
+
+      <div class="problem-grid">
+        <div>
+          <details open>
+            <summary>Uniform browning during hot, dry weather</summary>
+            <p><strong>Likely cause:</strong> drought stress or temporary summer dormancy.</p>
+            <ul>
+              <li>Water deeply rather than giving tiny daily amounts once the lawn is established.</li>
+              <li>Water in the early morning.</li>
+              <li>Raise mowing height during heat.</li>
+              <li>Do not apply strong nitrogen fertilizer to a dry, stressed lawn.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Brown tips immediately after mowing</summary>
+            <p><strong>Likely cause:</strong> blunt mower blade, mowing too low or removing too much leaf at once.</p>
+            <ul>
+              <li>Sharpen the blade.</li>
+              <li>Follow the one-third rule: remove no more than about one-third of leaf height per cut.</li>
+              <li>Raise mowing height while the lawn recovers.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Brown or yellow stripes after fertilizing</summary>
+            <p><strong>Likely cause:</strong> fertilizer burn or overlapping spreader passes.</p>
+            <ul>
+              <li>Water the affected area thoroughly if the product label permits.</li>
+              <li>Do not add more fertilizer.</li>
+              <li>Next time, calibrate the spreader and split the application into two crossing passes.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Small dead spots surrounded by darker green grass</summary>
+            <p><strong>Likely cause:</strong> concentrated urine, localized salt or chemical damage.</p>
+            <ul>
+              <li>Flush the area with water soon after the event.</li>
+              <li>Remove badly damaged turf if necessary and reseed the spot.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div>
+          <details open>
+            <summary>Irregular patches that enlarge in humid weather</summary>
+            <p><strong>Possible cause:</strong> fungal disease, especially when grass stays wet for long periods.</p>
+            <ul>
+              <li>Water early in the day, not late evening.</li>
+              <li>Improve airflow and avoid excessive nitrogen.</li>
+              <li>Remove heavy thatch and reduce prolonged leaf wetness.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Thin grass under trees or beside fences</summary>
+            <p><strong>Likely cause:</strong> shade plus competition for water and nutrients.</p>
+            <ul>
+              <li>Use a shade-tolerant mixture with fine fescues.</li>
+              <li>Prune where appropriate to improve light and airflow.</li>
+              <li>Accept a slightly higher mowing height.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Bare paths where people repeatedly walk</summary>
+            <p><strong>Likely cause:</strong> soil compaction and wear.</p>
+            <ul>
+              <li>Aerate compacted soil.</li>
+              <li>Overseed with a wear-tolerant mixture.</li>
+              <li>Reduce traffic until new grass is rooted.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Grass pulls up easily or dies despite watering</summary>
+            <p><strong>Possible cause:</strong> shallow rooting, root damage, severe compaction or soil-related problems.</p>
+            <ul>
+              <li>Check whether roots are actually developed.</li>
+              <li>Inspect the soil for compaction and drainage problems.</li>
+              <li>Renovate locally if the root zone is poor.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+      <div class="danger" style="margin-top:18px">
+        Do not automatically treat every brown patch with fertilizer. Fertilizer can worsen drought stress, salt damage and some disease problems. Diagnose first, then act.
+      </div>
+    </div>
+  </section>
+
+  <section id="calendar">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Year-round care</span>
+          <h2>Seasonal Lawn Calendar</h2>
+        </div>
+        <p>A practical cool-season lawn calendar suitable for a northern European climate. Actual timing depends on soil temperature, rainfall and local weather.</p>
+      </div>
+
+      <div class="calendar-grid">
+        <article class="season-card">
+          <h3>Spring</h3>
+          <ul>
+            <li>Remove winter debris after the soil dries.</li>
+            <li>Rake only when turf is firm enough.</li>
+            <li>Repair winter damage and bare areas.</li>
+            <li>Apply spring fertilizer after active growth starts.</li>
+            <li>Begin mowing with a sharp blade.</li>
+          </ul>
+        </article>
+        <article class="season-card">
+          <h3>Summer</h3>
+          <ul>
+            <li>Water deeply during dry periods.</li>
+            <li>Raise mowing height in heat.</li>
+            <li>Avoid heavy nitrogen during drought.</li>
+            <li>Watch for disease, dry patches and compaction.</li>
+            <li>Keep mower blades sharp.</li>
+          </ul>
+        </article>
+        <article class="season-card">
+          <h3>Autumn</h3>
+          <ul>
+            <li>Excellent period for overseeding and repair.</li>
+            <li>Aerate compacted areas if needed.</li>
+            <li>Feed with an autumn-appropriate fertilizer.</li>
+            <li>Remove leaves regularly.</li>
+            <li>Gradually reduce mowing frequency as growth slows.</li>
+          </ul>
+        </article>
+        <article class="season-card">
+          <h3>Winter</h3>
+          <ul>
+            <li>Avoid traffic on frozen or waterlogged turf.</li>
+            <li>Do not fertilize dormant frozen ground.</li>
+            <li>Service mower and spreader.</li>
+            <li>Plan spring repairs and order seed if needed.</li>
+            <li>Review drainage issues visible after thaw.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Visual progress</span>
+          <h2>My Lawn Journey</h2>
+        </div>
+        <p>A six-stage visual example showing how a lawn can progress from prepared soil to establishment, repair and first mowing.</p>
+      </div>
+
+      <div class="journey-grid">
+        <article class="journey-card">
+          <img src="images/prepared-soil.png" alt="Prepared and levelled soil ready for lawn seeding">
+          <div class="journey-body"><span class="journey-step">Step 1</span><h3>Prepared Soil</h3><p>Ground is cleared, levelled and lightly firmed before seed is applied.</p></div>
+        </article>
+
+        <article class="journey-card">
+          <img src="images/watering-process.png" alt="Watering freshly seeded soil">
+          <div class="journey-body"><span class="journey-step">Step 2</span><h3>Watering Process</h3><p>A gentle spray keeps the top layer moist without washing seed into piles.</p></div>
+        </article>
+
+        <article class="journey-card">
+          <img src="images/first-seedlings.png" alt="First young grass seedlings emerging from soil">
+          <div class="journey-body"><span class="journey-step">Step 3</span><h3>First Seedlings</h3><p>Fine green shoots begin to cover the soil. Moisture remains critical at this stage.</p></div>
+        </article>
+
+        <article class="journey-card">
+          <img src="images/lush-lawn.png" alt="Dense established green lawn">
+          <div class="journey-body"><span class="journey-step">Step 4</span><h3>Lush Green Grass</h3><p>The lawn becomes denser as roots deepen and individual plants begin to tiller.</p></div>
+        </article>
+
+        <article class="journey-card">
+          <img src="images/reseeding-patches.png" alt="Reseeding sparse and bare patches of lawn">
+          <div class="journey-body"><span class="journey-step">Step 5</span><h3>Reseeding Thin Areas</h3><p>Bare spots are loosened, reseeded and kept moist until new seedlings establish.</p></div>
+        </article>
+
+        <article class="journey-card">
+          <img src="images/first-mowing.png" alt="First mowing of a newly established lawn">
+          <div class="journey-body"><span class="journey-step">Step 6</span><h3>First Mowing</h3><p>The first cut is gentle and removes only the top portion of the leaf.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta">
+        <h2>Good lawn care is mostly consistency.</h2>
+        <p>
+          Choose a seed mix that suits the actual site, prepare the soil carefully, avoid overwatering and overfertilizing,
+          mow with a sharp blade, and repair weak areas early. A lawn becomes stronger over time when roots are allowed to develop,
+          rather than when growth is forced too aggressively.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>GREEN — Complete Lawn Growing Guide</div>
+    <div>© <span id="year"></span> • Responsive one-page website</div>
+  </div>
+</footer>
+
+<script>
+  const byId = (id) => document.getElementById(id);
+
+  function updateSeedCalculator() {
+    const area = parseFloat(byId('seed-area').value) || 0;
+    const rate = parseFloat(byId('seed-rate').value) || 0;
+    const grams = area * rate;
+    byId('seed-result').textContent = (grams / 1000).toFixed(2) + ' kg';
+    byId('seed-detail').textContent = `${area} m² × ${rate} g/m² = ${grams.toFixed(0)} g`;
+  }
+
+  function updateFertilizerCalculator() {
+    const area = parseFloat(byId('fert-area').value) || 0;
+    const rate = parseFloat(byId('fert-rate').value) || 0;
+    const grams = area * rate;
+    byId('fert-result').textContent = (grams / 1000).toFixed(2) + ' kg';
+    byId('fert-detail').textContent = `${area} m² × ${rate} g/m² = ${grams.toFixed(0)} g`;
+  }
+
+  ['seed-area','seed-rate'].forEach(id => byId(id).addEventListener('input', updateSeedCalculator));
+  ['fert-area','fert-rate'].forEach(id => byId(id).addEventListener('input', updateFertilizerCalculator));
+
+  updateSeedCalculator();
+  updateFertilizerCalculator();
+  byId('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
