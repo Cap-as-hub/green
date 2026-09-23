@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="GREEN — a practical lawn guide for soil preparation, seed selection, sowing, watering, fertilizing, troubleshooting and seasonal maintenance." />
-  <title>GREEN — Complete Lawn Growing Guide</title>
+  <title><span data-i18n="footer_title">GREEN — Complete Lawn Growing Guide</span></title>
   <style>
     :root {
       --bg:#f4f8f2;
@@ -207,6 +207,23 @@
     footer{padding:34px 0 44px;color:var(--muted);font-size:.9rem}
     .footer-row{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:24px}
 
+
+    .language-switcher{
+      display:flex;align-items:center;gap:8px;margin-left:8px
+    }
+    .language-switcher label{
+      margin:0;font-size:.78rem;font-weight:800;color:var(--muted)
+    }
+    .language-switcher select{
+      width:auto;min-height:40px;padding:8px 34px 8px 11px;border-radius:12px;
+      border:1px solid var(--line);background:#fff;color:var(--text);font-weight:800;
+      cursor:pointer
+    }
+    @media (max-width:900px){
+      .nav{align-items:flex-start;padding:12px 0}
+      .language-switcher{margin-left:0}
+    }
+
     @media (max-width:1080px){
       .grid-5{grid-template-columns:repeat(2,1fr)}
       .calendar-grid{grid-template-columns:repeat(2,1fr)}
@@ -236,14 +253,25 @@
   <div class="container nav">
     <a class="brand" href="#top">GREEN</a>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="#process">Process</a>
-      <a href="#calculators">Calculators</a>
-      <a href="#grass-types">Grass Types</a>
-      <a href="#fertilizing">Fertilizing</a>
-      <a href="#problems">Problems</a>
-      <a href="#calendar">Calendar</a>
-      <a href="#journey">Journey</a>
+      <a href="#process" data-i18n="nav_process">Process</a>
+      <a href="#calculators" data-i18n="nav_calculators">Calculators</a>
+      <a href="#grass-types" data-i18n="nav_grass">Grass Types</a>
+      <a href="#fertilizing" data-i18n="nav_fertilizing">Fertilizing</a>
+      <a href="#problems" data-i18n="nav_problems">Problems</a>
+      <a href="#calendar" data-i18n="nav_calendar">Calendar</a>
+      <a href="#journey" data-i18n="nav_journey">Journey</a>
     </nav>
+    <div class="language-switcher">
+      <label for="language" data-i18n="language_label">Language</label>
+      <select id="language" aria-label="Language">
+        <option value="en">English</option>
+        <option value="lt">Lietuvių</option>
+        <option value="lv">Latviešu</option>
+        <option value="pl">Polski</option>
+        <option value="et">Eesti</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
   </div>
 </header>
 
@@ -251,21 +279,19 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">Practical lawn guide</span>
-        <h1>From bare soil to a strong, healthy lawn.</h1>
+        <span class="eyebrow"><span data-i18n="eyebrow_main">Practical lawn guide</span></span>
+        <h1><span data-i18n="hero_title">From bare soil to a strong, healthy lawn.</span></h1>
         <p>
-          A complete guide for preparing the soil, choosing the right grass seed mixture,
-          sowing, watering, fertilizing, fixing brown or thin areas, and maintaining a lawn
-          through the seasons.
+          <span data-i18n="hero_text">A complete guide for preparing the soil, choosing the right grass seed mixture, sowing, watering, fertilizing, fixing brown or thin areas, and maintaining a lawn through the seasons.</span>
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#process">Start with the process</a>
-          <a class="button secondary" href="#grass-types">Choose a grass type</a>
+          <a class="button primary" href="#process"><span data-i18n="hero_btn_process">Start with the process</span></a>
+          <a class="button secondary" href="#grass-types"><span data-i18n="hero_btn_grass">Choose a grass type</span></a>
         </div>
       </div>
       <div class="hero-card">
         <img src="images/lush-lawn.png" alt="Healthy established green lawn">
-        <div class="caption">A dense lawn is built through preparation, suitable seed choice and consistent care.</div>
+        <div class="caption"><span data-i18n="hero_caption">A dense lawn is built through preparation, suitable seed choice and consistent care.</span></div>
       </div>
     </div>
   </section>
@@ -274,12 +300,11 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Step by step</span>
-          <h2>How to establish a lawn</h2>
+          <span class="eyebrow"><span data-i18n="process_eyebrow">Step by step</span></span>
+          <h2><span data-i18n="process_title">How to establish a lawn</span></h2>
         </div>
         <p>
-          The quality of a new lawn is determined mainly by soil preparation, seed-to-soil contact,
-          watering during germination, and correct early mowing.
+          <span data-i18n="process_intro">The quality of a new lawn is determined mainly by soil preparation, seed-to-soil contact, watering during germination, and correct early mowing.</span>
         </p>
       </div>
 
@@ -287,57 +312,57 @@
         <article class="step">
           <div class="step-no">01</div>
           <div>
-            <h3>Clear and inspect the area</h3>
-            <p>Remove construction debris, stones, perennial weeds, old turf and roots. Check drainage before adding the final soil layer.</p>
+            <h3><span data-i18n="step1_title">Clear and inspect the area</span></h3>
+            <p><span data-i18n="step1_text">Remove construction debris, stones, perennial weeds, old turf and roots. Check drainage before adding the final soil layer.</span></p>
           </div>
         </article>
         <article class="step">
           <div class="step-no">02</div>
           <div>
-            <h3>Prepare the topsoil</h3>
-            <p>Loosen compacted ground, level the area and create a fine, even seedbed. Avoid leaving deep soft spots that will settle later.</p>
+            <h3><span data-i18n="step2_title">Prepare the topsoil</span></h3>
+            <p><span data-i18n="step2_text">Loosen compacted ground, level the area and create a fine, even seedbed. Avoid leaving deep soft spots that will settle later.</span></p>
           </div>
         </article>
         <article class="step">
           <div class="step-no">03</div>
           <div>
-            <h3>Firm and level</h3>
-            <p>Lightly roll or firm the soil. The surface should be stable enough not to sink deeply underfoot, but still loose enough for roots to penetrate.</p>
+            <h3><span data-i18n="step3_title">Firm and level</span></h3>
+            <p><span data-i18n="step3_text">Lightly roll or firm the soil. The surface should be stable enough not to sink deeply underfoot, but still loose enough for roots to penetrate.</span></p>
           </div>
         </article>
         <article class="step">
           <div class="step-no">04</div>
           <div>
-            <h3>Choose the correct seed mix</h3>
-            <p>Select according to use: decorative, family, sport/high traffic, shade, drought-tolerant or low-maintenance. The species composition matters more than the picture on the bag.</p>
+            <h3><span data-i18n="step4_title">Choose the correct seed mix</span></h3>
+            <p><span data-i18n="step4_text">Select according to use: decorative, family, sport/high traffic, shade, drought-tolerant or low-maintenance. The species composition matters more than the picture on the bag.</span></p>
           </div>
         </article>
         <article class="step">
           <div class="step-no">05</div>
           <div>
-            <h3>Sow evenly</h3>
-            <p>Divide the seed into two equal portions and sow in crossing directions. Lightly rake or press the seed into the surface for good soil contact.</p>
+            <h3><span data-i18n="step5_title">Sow evenly</span></h3>
+            <p><span data-i18n="step5_text">Divide the seed into two equal portions and sow in crossing directions. Lightly rake or press the seed into the surface for good soil contact.</span></p>
           </div>
         </article>
         <article class="step">
           <div class="step-no">06</div>
           <div>
-            <h3>Keep the surface moist</h3>
-            <p>During germination, water lightly and frequently enough that the top layer does not dry out. Avoid heavy streams that move the seed.</p>
+            <h3><span data-i18n="step6_title">Keep the surface moist</span></h3>
+            <p><span data-i18n="step6_text">During germination, water lightly and frequently enough that the top layer does not dry out. Avoid heavy streams that move the seed.</span></p>
           </div>
         </article>
         <article class="step">
           <div class="step-no">07</div>
           <div>
-            <h3>Repair thin areas</h3>
-            <p>After establishment, identify sparse or bare areas. Loosen the surface, add seed, press it in and maintain moisture until the repair germinates.</p>
+            <h3><span data-i18n="step7_title">Repair thin areas</span></h3>
+            <p><span data-i18n="step7_text">After establishment, identify sparse or bare areas. Loosen the surface, add seed, press it in and maintain moisture until the repair germinates.</span></p>
           </div>
         </article>
         <article class="step">
           <div class="step-no">08</div>
           <div>
-            <h3>First mowing</h3>
-            <p>Make the first cut when the grass is firmly rooted and has reached roughly 8–10 cm. Cut only the upper third and use a sharp mower blade.</p>
+            <h3 data-i18n="journey_mowing">First Mowing</h3>
+            <p><span data-i18n="step8_text">Make the first cut when the grass is firmly rooted and has reached roughly 8–10 cm. Cut only the upper third and use a sharp mower blade.</span></p>
           </div>
         </article>
       </div>
@@ -348,53 +373,53 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Practical tools</span>
-          <h2>Seed & fertilizer calculators</h2>
+          <span class="eyebrow"><span data-i18n="calc_eyebrow">Practical tools</span></span>
+          <h2><span data-i18n="calc_title">Seed & fertilizer calculators</span></h2>
         </div>
-        <p>Use the calculators as planning tools. Always compare the result with the application rate printed on the seed or fertilizer package.</p>
+        <p><span data-i18n="calc_intro">Use the calculators as planning tools. Always compare the result with the application rate printed on the seed or fertilizer package.</span></p>
       </div>
 
       <div class="calculator-grid">
         <article class="calculator">
-          <h3>Lawn Seed Calculator</h3>
-          <p>Estimate how many kilograms of seed are required for the selected area.</p>
+          <h3><span data-i18n="seed_calc_title">Lawn Seed Calculator</span></h3>
+          <p><span data-i18n="seed_calc_text">Estimate how many kilograms of seed are required for the selected area.</span></p>
           <div class="field-grid">
             <div>
-              <label for="seed-area">Lawn area (m²)</label>
+              <label for="seed-area"><span data-i18n="lawn_area">Lawn area (m²)</span></label>
               <input id="seed-area" type="number" min="0" value="100">
             </div>
             <div>
-              <label for="seed-rate">Seeding rate (g/m²)</label>
+              <label for="seed-rate"><span data-i18n="seed_rate">Seeding rate (g/m²)</span></label>
               <input id="seed-rate" type="number" min="0" value="30">
             </div>
           </div>
           <div class="result-box">
-            <span>Required seed</span>
+            <span><span data-i18n="required_seed">Required seed</span></span>
             <strong id="seed-result">3.00 kg</strong>
             <span id="seed-detail"></span>
           </div>
-          <div class="note">Typical new-lawn rates are often around 25–40 g/m², but use the rate specified for your exact mixture.</div>
+          <div class="note"><span data-i18n="seed_note">Typical new-lawn rates are often around 25–40 g/m², but use the rate specified for your exact mixture.</span></div>
         </article>
 
         <article class="calculator">
-          <h3>Fertilizer Quantity Calculator</h3>
-          <p>Estimate product quantity from the package application rate.</p>
+          <h3><span data-i18n="fert_calc_title">Fertilizer Quantity Calculator</span></h3>
+          <p><span data-i18n="fert_calc_text">Estimate product quantity from the package application rate.</span></p>
           <div class="field-grid">
             <div>
-              <label for="fert-area">Lawn area (m²)</label>
+              <label for="fert-area"><span data-i18n="lawn_area">Lawn area (m²)</span></label>
               <input id="fert-area" type="number" min="0" value="100">
             </div>
             <div>
-              <label for="fert-rate">Product rate (g/m²)</label>
+              <label for="fert-rate"><span data-i18n="product_rate">Product rate (g/m²)</span></label>
               <input id="fert-rate" type="number" min="0" value="25">
             </div>
           </div>
           <div class="result-box">
-            <span>Required fertilizer product</span>
+            <span><span data-i18n="required_fert">Required fertilizer product</span></span>
             <strong id="fert-result">2.50 kg</strong>
             <span id="fert-detail"></span>
           </div>
-          <div class="note">Do not increase the dose to make the lawn greener faster. Excess fertilizer can burn grass and increase disease risk.</div>
+          <div class="note"><span data-i18n="fert_note">Do not increase the dose to make the lawn greener faster. Excess fertilizer can burn grass and increase disease risk.</span></div>
         </article>
       </div>
     </div>
@@ -404,44 +429,43 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Seed selection</span>
-          <h2>Grass species and lawn mixtures</h2>
+          <span class="eyebrow"><span data-i18n="grass_eyebrow">Seed selection</span></span>
+          <h2><span data-i18n="grass_title">Grass species and lawn mixtures</span></h2>
         </div>
         <p>
-          Most lawn seed products are mixtures of several cool-season grasses. The exact percentage varies by producer,
-          but the species listed below explain how a mixture will behave.
+          <span data-i18n="grass_intro">Most lawn seed products are mixtures of several cool-season grasses. The exact percentage varies by producer, but the species listed below explain how a mixture will behave.</span>
         </p>
       </div>
 
       <div class="grid-5">
         <article class="species-card">
-          <h3>Perennial ryegrass</h3>
+          <h3><span data-i18n="species_rye">Perennial ryegrass</span></h3>
           <div class="latin">Lolium perenne</div>
-          <p>Very fast germination and strong wear tolerance. Excellent for quick establishment, family lawns, repairs and sports use.</p>
+          <p><span data-i18n="species_rye_text">Very fast germination and strong wear tolerance. Excellent for quick establishment, family lawns, repairs and sports use.</span></p>
           <div class="tag-row"><span class="tag">Fast</span><span class="tag">Wear tolerant</span><span class="tag">Frequent mowing</span></div>
         </article>
         <article class="species-card">
-          <h3>Kentucky bluegrass</h3>
+          <h3><span data-i18n="species_blue">Kentucky bluegrass</span></h3>
           <div class="latin">Poa pratensis</div>
-          <p>Forms underground rhizomes, which help the lawn recover from damage. Dense and durable once established, but slower to germinate.</p>
+          <p><span data-i18n="species_blue_text">Forms underground rhizomes, which help the lawn recover from damage. Dense and durable once established, but slower to germinate.</span></p>
           <div class="tag-row"><span class="tag">Dense</span><span class="tag">Self-repairing</span><span class="tag">Slower start</span></div>
         </article>
         <article class="species-card">
-          <h3>Red fescue</h3>
+          <h3><span data-i18n="species_red">Red fescue</span></h3>
           <div class="latin">Festuca rubra</div>
-          <p>Fine-leaved grass suited to decorative lawns, lower fertility and partial shade. Usually grows more slowly than ryegrass.</p>
+          <p><span data-i18n="species_red_text">Fine-leaved grass suited to decorative lawns, lower fertility and partial shade. Usually grows more slowly than ryegrass.</span></p>
           <div class="tag-row"><span class="tag">Fine texture</span><span class="tag">Shade</span><span class="tag">Low maintenance</span></div>
         </article>
         <article class="species-card">
-          <h3>Tall fescue</h3>
+          <h3><span data-i18n="species_tall">Tall fescue</span></h3>
           <div class="latin">Festuca arundinacea</div>
-          <p>Deep-rooted and more tolerant of heat and drought. Useful where watering is limited or soil dries quickly.</p>
+          <p><span data-i18n="species_tall_text">Deep-rooted and more tolerant of heat and drought. Useful where watering is limited or soil dries quickly.</span></p>
           <div class="tag-row"><span class="tag">Drought tolerant</span><span class="tag">Deep roots</span><span class="tag">Robust</span></div>
         </article>
         <article class="species-card">
-          <h3>Fine fescues</h3>
+          <h3><span data-i18n="species_fine">Fine fescues</span></h3>
           <div class="latin">Festuca spp.</div>
-          <p>Includes hard, sheep and other fine fescues. Often used in low-maintenance, shade-tolerant and slower-growing mixtures.</p>
+          <p><span data-i18n="species_fine_text">Includes hard, sheep and other fine fescues. Often used in low-maintenance, shade-tolerant and slower-growing mixtures.</span></p>
           <div class="tag-row"><span class="tag">Low input</span><span class="tag">Shade tolerant</span><span class="tag">Slow growth</span></div>
         </article>
       </div>
@@ -469,14 +493,14 @@
             </tr>
             <tr>
               <td class="good">Family / universal lawn</td>
-              <td>Balanced ryegrass + red fescue + Kentucky bluegrass</td>
+              <td>Balanced ryegrass + red fescue + <span data-i18n="species_blue">Kentucky bluegrass</span></td>
               <td>Home gardens, children, pets, normal walking</td>
               <td>Good balance of appearance, durability and recovery</td>
               <td>Needs regular mowing and feeding for best density</td>
             </tr>
             <tr>
               <td class="good">Sports / high traffic</td>
-              <td>High perennial ryegrass with Kentucky bluegrass; sometimes robust fescues</td>
+              <td>High perennial ryegrass with <span data-i18n="species_blue">Kentucky bluegrass</span>; sometimes robust fescues</td>
               <td>Play areas, training zones, high wear</td>
               <td>Strong wear tolerance and recovery</td>
               <td>Needs more water, nutrients and mowing under intensive use</td>
@@ -490,7 +514,7 @@
             </tr>
             <tr>
               <td class="good">Shade-tolerant lawn</td>
-              <td>Fine fescues + red fescue, sometimes shade-tolerant bluegrass types</td>
+              <td><span data-i18n="species_fine">Fine fescues</span> + red fescue, sometimes shade-tolerant bluegrass types</td>
               <td>Near trees, fences, north-facing areas</td>
               <td>Better persistence with less direct sun</td>
               <td>Even shade mixtures still need some light; dense tree roots may compete for water</td>
@@ -504,7 +528,7 @@
             </tr>
             <tr>
               <td class="good">Dry / drought-prone site</td>
-              <td>Tall fescue dominant or mixed with drought-tolerant fine fescues</td>
+              <td><span data-i18n="species_tall">Tall fescue</span> dominant or mixed with drought-tolerant fine fescues</td>
               <td>Sunny areas, sandy soil, limited irrigation</td>
               <td>Deep rooting and better heat tolerance</td>
               <td>Leaf texture can be coarser than decorative mixtures</td>
@@ -523,11 +547,11 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Nutrition</span>
-          <h2>When and how to fertilize</h2>
+          <span class="eyebrow"><span data-i18n="fert_eyebrow">Nutrition</span></span>
+          <h2><span data-i18n="fert_title">When and how to fertilize</span></h2>
         </div>
         <p>
-          For cool-season lawns, growth is strongest in spring and autumn. Fertilizing should support that natural rhythm rather than force growth during heat or drought.
+          <span data-i18n="fert_intro">For cool-season lawns, growth is strongest in spring and autumn. Fertilizing should support that natural rhythm rather than force growth during heat or drought.</span>
         </p>
       </div>
 
@@ -623,11 +647,11 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Troubleshooting</span>
-          <h2>What to do when grass turns brown</h2>
+          <span class="eyebrow"><span data-i18n="problem_eyebrow">Troubleshooting</span></span>
+          <h2><span data-i18n="problem_title">What to do when grass turns brown</span></h2>
         </div>
         <p>
-          Browning is a symptom, not a diagnosis. First look at the shape and location of the damage: uniform, circular, along edges, after fertilizing, after mowing, or only in compacted areas.
+          <span data-i18n="problem_intro">Browning is a symptom, not a diagnosis. First look at the shape and location of the damage: uniform, circular, along edges, after fertilizing, after mowing, or only in compacted areas.</span>
         </p>
       </div>
 
@@ -727,15 +751,15 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Year-round care</span>
-          <h2>Seasonal Lawn Calendar</h2>
+          <span class="eyebrow"><span data-i18n="calendar_eyebrow">Year-round care</span></span>
+          <h2><span data-i18n="calendar_title">Seasonal Lawn Calendar</span></h2>
         </div>
-        <p>A practical cool-season lawn calendar suitable for a northern European climate. Actual timing depends on soil temperature, rainfall and local weather.</p>
+        <p><span data-i18n="calendar_intro">A practical cool-season lawn calendar suitable for a northern European climate. Actual timing depends on soil temperature, rainfall and local weather.</span></p>
       </div>
 
       <div class="calendar-grid">
         <article class="season-card">
-          <h3>Spring</h3>
+          <h3 data-i18n="spring">Spring</h3>
           <ul>
             <li>Remove winter debris after the soil dries.</li>
             <li>Rake only when turf is firm enough.</li>
@@ -745,7 +769,7 @@
           </ul>
         </article>
         <article class="season-card">
-          <h3>Summer</h3>
+          <h3 data-i18n="summer">Summer</h3>
           <ul>
             <li>Water deeply during dry periods.</li>
             <li>Raise mowing height in heat.</li>
@@ -755,7 +779,7 @@
           </ul>
         </article>
         <article class="season-card">
-          <h3>Autumn</h3>
+          <h3 data-i18n="autumn">Autumn</h3>
           <ul>
             <li>Excellent period for overseeding and repair.</li>
             <li>Aerate compacted areas if needed.</li>
@@ -765,7 +789,7 @@
           </ul>
         </article>
         <article class="season-card">
-          <h3>Winter</h3>
+          <h3 data-i18n="winter">Winter</h3>
           <ul>
             <li>Avoid traffic on frozen or waterlogged turf.</li>
             <li>Do not fertilize dormant frozen ground.</li>
@@ -782,41 +806,41 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Visual progress</span>
-          <h2>My Lawn Journey</h2>
+          <span class="eyebrow"><span data-i18n="journey_eyebrow">Visual progress</span></span>
+          <h2><span data-i18n="journey_title">My Lawn Journey</span></h2>
         </div>
-        <p>A six-stage visual example showing how a lawn can progress from prepared soil to establishment, repair and first mowing.</p>
+        <p><span data-i18n="journey_intro">A six-stage visual example showing how a lawn can progress from prepared soil to establishment, repair and first mowing.</span></p>
       </div>
 
       <div class="journey-grid">
         <article class="journey-card">
           <img src="images/prepared-soil.png" alt="Prepared and levelled soil ready for lawn seeding">
-          <div class="journey-body"><span class="journey-step">Step 1</span><h3>Prepared Soil</h3><p>Ground is cleared, levelled and lightly firmed before seed is applied.</p></div>
+          <div class="journey-body"><span class="journey-step">Step 1</span><h3 data-i18n="journey_prepared">Prepared Soil</h3><p>Ground is cleared, levelled and lightly firmed before seed is applied.</p></div>
         </article>
 
         <article class="journey-card">
           <img src="images/watering-process.png" alt="Watering freshly seeded soil">
-          <div class="journey-body"><span class="journey-step">Step 2</span><h3>Watering Process</h3><p>A gentle spray keeps the top layer moist without washing seed into piles.</p></div>
+          <div class="journey-body"><span class="journey-step">Step 2</span><h3 data-i18n="journey_watering">Watering Process</h3><p>A gentle spray keeps the top layer moist without washing seed into piles.</p></div>
         </article>
 
         <article class="journey-card">
           <img src="images/first-seedlings.png" alt="First young grass seedlings emerging from soil">
-          <div class="journey-body"><span class="journey-step">Step 3</span><h3>First Seedlings</h3><p>Fine green shoots begin to cover the soil. Moisture remains critical at this stage.</p></div>
+          <div class="journey-body"><span class="journey-step">Step 3</span><h3 data-i18n="journey_seedlings">First Seedlings</h3><p>Fine green shoots begin to cover the soil. Moisture remains critical at this stage.</p></div>
         </article>
 
         <article class="journey-card">
           <img src="images/lush-lawn.png" alt="Dense established green lawn">
-          <div class="journey-body"><span class="journey-step">Step 4</span><h3>Lush Green Grass</h3><p>The lawn becomes denser as roots deepen and individual plants begin to tiller.</p></div>
+          <div class="journey-body"><span class="journey-step">Step 4</span><h3 data-i18n="journey_lush">Lush Green Grass</h3><p>The lawn becomes denser as roots deepen and individual plants begin to tiller.</p></div>
         </article>
 
         <article class="journey-card">
           <img src="images/reseeding-patches.png" alt="Reseeding sparse and bare patches of lawn">
-          <div class="journey-body"><span class="journey-step">Step 5</span><h3>Reseeding Thin Areas</h3><p>Bare spots are loosened, reseeded and kept moist until new seedlings establish.</p></div>
+          <div class="journey-body"><span class="journey-step">Step 5</span><h3 data-i18n="journey_reseed">Reseeding Thin Areas</h3><p>Bare spots are loosened, reseeded and kept moist until new seedlings establish.</p></div>
         </article>
 
         <article class="journey-card">
-          <img src="images/first-mowing.png" alt="First mowing of a newly established lawn">
-          <div class="journey-body"><span class="journey-step">Step 6</span><h3>First Mowing</h3><p>The first cut is gentle and removes only the top portion of the leaf.</p></div>
+          <img src="images/first-mowing.png" alt="<span data-i18n="step8_title">First mowing</span> of a newly established lawn">
+          <div class="journey-body"><span class="journey-step">Step 6</span><h3 data-i18n="journey_mowing">First Mowing</h3><p>The first cut is gentle and removes only the top portion of the leaf.</p></div>
         </article>
       </div>
     </div>
@@ -825,11 +849,9 @@
   <section>
     <div class="container">
       <div class="cta">
-        <h2>Good lawn care is mostly consistency.</h2>
+        <h2><span data-i18n="cta_title">Good lawn care is mostly consistency.</span></h2>
         <p>
-          Choose a seed mix that suits the actual site, prepare the soil carefully, avoid overwatering and overfertilizing,
-          mow with a sharp blade, and repair weak areas early. A lawn becomes stronger over time when roots are allowed to develop,
-          rather than when growth is forced too aggressively.
+          <span data-i18n="cta_text">Choose a seed mix that suits the actual site, prepare the soil carefully, avoid overwatering and overfertilizing, mow with a sharp blade, and repair weak areas early. A lawn becomes stronger over time when roots are allowed to develop, rather than when growth is forced too aggressively.</span>
         </p>
       </div>
     </div>
@@ -838,10 +860,137 @@
 
 <footer>
   <div class="container footer-row">
-    <div>GREEN — Complete Lawn Growing Guide</div>
-    <div>© <span id="year"></span> • Responsive one-page website</div>
+    <div><span data-i18n="footer_title">GREEN — Complete Lawn Growing Guide</span></div>
+    <div>© <span id="year"></span> • <span data-i18n="footer_sub">Responsive one-page website</span></div>
   </div>
 </footer>
+
+
+<script>
+const translations = {"en": {"language_label": "Language", "nav_process": "Process", "nav_calculators": "Calculators", "nav_grass": "Grass Types", "nav_fertilizing": "Fertilizing", "nav_problems": "Problems", "nav_calendar": "Calendar", "nav_journey": "Journey", "eyebrow_main": "Practical lawn guide", "hero_title": "From bare soil to a strong, healthy lawn.", "hero_text": "A complete guide for preparing the soil, choosing the right grass seed mixture, sowing, watering, fertilizing, fixing brown or thin areas, and maintaining a lawn through the seasons.", "hero_btn_process": "Start with the process", "hero_btn_grass": "Choose a grass type", "hero_caption": "A dense lawn is built through preparation, suitable seed choice and consistent care.", "process_eyebrow": "Step by step", "process_title": "How to establish a lawn", "process_intro": "The quality of a new lawn is determined mainly by soil preparation, seed-to-soil contact, watering during germination, and correct early mowing.", "step1_title": "Clear and inspect the area", "step1_text": "Remove construction debris, stones, perennial weeds, old turf and roots. Check drainage before adding the final soil layer.", "step2_title": "Prepare the topsoil", "step2_text": "Loosen compacted ground, level the area and create a fine, even seedbed. Avoid leaving deep soft spots that will settle later.", "step3_title": "Firm and level", "step3_text": "Lightly roll or firm the soil. The surface should be stable enough not to sink deeply underfoot, but still loose enough for roots to penetrate.", "step4_title": "Choose the correct seed mix", "step4_text": "Select according to use: decorative, family, sport/high traffic, shade, drought-tolerant or low-maintenance. The species composition matters more than the picture on the bag.", "step5_title": "Sow evenly", "step5_text": "Divide the seed into two equal portions and sow in crossing directions. Lightly rake or press the seed into the surface for good soil contact.", "step6_title": "Keep the surface moist", "step6_text": "During germination, water lightly and frequently enough that the top layer does not dry out. Avoid heavy streams that move the seed.", "step7_title": "Repair thin areas", "step7_text": "After establishment, identify sparse or bare areas. Loosen the surface, add seed, press it in and maintain moisture until the repair germinates.", "step8_title": "First mowing", "step8_text": "Make the first cut when the grass is firmly rooted and has reached roughly 8–10 cm. Cut only the upper third and use a sharp mower blade.", "calc_eyebrow": "Practical tools", "calc_title": "Seed & fertilizer calculators", "calc_intro": "Use the calculators as planning tools. Always compare the result with the application rate printed on the seed or fertilizer package.", "seed_calc_title": "Lawn Seed Calculator", "seed_calc_text": "Estimate how many kilograms of seed are required for the selected area.", "lawn_area": "Lawn area (m²)", "seed_rate": "Seeding rate (g/m²)", "required_seed": "Required seed", "seed_note": "Typical new-lawn rates are often around 25–40 g/m², but use the rate specified for your exact mixture.", "fert_calc_title": "Fertilizer Quantity Calculator", "fert_calc_text": "Estimate product quantity from the package application rate.", "product_rate": "Product rate (g/m²)", "required_fert": "Required fertilizer product", "fert_note": "Do not increase the dose to make the lawn greener faster. Excess fertilizer can burn grass and increase disease risk.", "grass_eyebrow": "Seed selection", "grass_title": "Grass species and lawn mixtures", "grass_intro": "Most lawn seed products are mixtures of several cool-season grasses. The exact percentage varies by producer, but the species listed below explain how a mixture will behave.", "species_rye": "Perennial ryegrass", "species_rye_text": "Very fast germination and strong wear tolerance. Excellent for quick establishment, family lawns, repairs and sports use.", "species_blue": "Kentucky bluegrass", "species_blue_text": "Forms underground rhizomes, which help the lawn recover from damage. Dense and durable once established, but slower to germinate.", "species_red": "Red fescue", "species_red_text": "Fine-leaved grass suited to decorative lawns, lower fertility and partial shade. Usually grows more slowly than ryegrass.", "species_tall": "Tall fescue", "species_tall_text": "Deep-rooted and more tolerant of heat and drought. Useful where watering is limited or soil dries quickly.", "species_fine": "Fine fescues", "species_fine_text": "Includes hard, sheep and other fine fescues. Often used in low-maintenance, shade-tolerant and slower-growing mixtures.", "fert_eyebrow": "Nutrition", "fert_title": "When and how to fertilize", "fert_intro": "For cool-season lawns, growth is strongest in spring and autumn. Fertilizing should support that natural rhythm rather than force growth during heat or drought.", "problem_eyebrow": "Troubleshooting", "problem_title": "What to do when grass turns brown", "problem_intro": "Browning is a symptom, not a diagnosis. First look at the shape and location of the damage: uniform, circular, along edges, after fertilizing, after mowing, or only in compacted areas.", "calendar_eyebrow": "Year-round care", "calendar_title": "Seasonal Lawn Calendar", "calendar_intro": "A practical cool-season lawn calendar suitable for a northern European climate. Actual timing depends on soil temperature, rainfall and local weather.", "spring": "Spring", "summer": "Summer", "autumn": "Autumn", "winter": "Winter", "journey_eyebrow": "Visual progress", "journey_title": "My Lawn Journey", "journey_intro": "A six-stage visual example showing how a lawn can progress from prepared soil to establishment, repair and first mowing.", "journey_prepared": "Prepared Soil", "journey_watering": "Watering Process", "journey_seedlings": "First Seedlings", "journey_lush": "Lush Green Grass", "journey_reseed": "Reseeding Thin Areas", "journey_mowing": "First Mowing", "cta_title": "Good lawn care is mostly consistency.", "cta_text": "Choose a seed mix that suits the actual site, prepare the soil carefully, avoid overwatering and overfertilizing, mow with a sharp blade, and repair weak areas early. A lawn becomes stronger over time when roots are allowed to develop, rather than when growth is forced too aggressively.", "footer_title": "GREEN — Complete Lawn Growing Guide", "footer_sub": "Responsive one-page website"}, "lt": {"language_label": "Kalba", "nav_process": "Procesas", "nav_calculators": "Skaičiuoklės", "nav_grass": "Žolės rūšys", "nav_fertilizing": "Tręšimas", "nav_problems": "Problemos", "nav_calendar": "Kalendorius", "nav_journey": "Vejos kelias", "eyebrow_main": "Praktinis vejos gidas", "hero_title": "Nuo plikos žemės iki tvirtos ir sveikos vejos.", "hero_text": "Išsamus gidas apie dirvos paruošimą, tinkamo žolių sėklų mišinio pasirinkimą, sėją, laistymą, tręšimą, parudavusių ar išretėjusių vietų atkūrimą ir vejos priežiūrą visais metų laikais.", "hero_btn_process": "Pradėti nuo proceso", "hero_btn_grass": "Pasirinkti žolės rūšį", "hero_caption": "Tankią veją lemia geras paruošimas, tinkamos sėklos ir nuosekli priežiūra.", "process_eyebrow": "Žingsnis po žingsnio", "process_title": "Kaip įrengti veją", "process_intro": "Naujos vejos kokybę daugiausia lemia dirvos paruošimas, geras sėklų kontaktas su dirva, laistymas dygimo metu ir tinkamas pirmasis pjovimas.", "step1_title": "Išvalykite ir įvertinkite plotą", "step1_text": "Pašalinkite statybines atliekas, akmenis, daugiametes piktžoles, seną velėną ir šaknis. Prieš pilant galutinį dirvos sluoksnį įvertinkite drenažą.", "step2_title": "Paruoškite viršutinį dirvos sluoksnį", "step2_text": "Supurenkite suslėgtą dirvą, išlyginkite plotą ir suformuokite smulkų, tolygų sėklų guolį. Nepalikite gilių minkštų vietų, kurios vėliau suslūgs.", "step3_title": "Sutvirtinkite ir išlyginkite", "step3_text": "Dirvą lengvai suvoluokite arba sutankinkite. Paviršius turi būti stabilus, bet ne per kietas, kad šaknys galėtų skverbtis.", "step4_title": "Pasirinkite tinkamą sėklų mišinį", "step4_text": "Rinkitės pagal paskirtį: dekoratyvinei, šeimos, sportinei ar intensyviai naudojamai vejai, pavėsiui, sausrai arba mažai priežiūros reikalaujančiai vejai. Svarbiau mišinio rūšių sudėtis nei paveikslėlis ant pakuotės.", "step5_title": "Sėkite tolygiai", "step5_text": "Sėklas padalinkite į dvi dalis ir sėkite dviem kryžminėmis kryptimis. Lengvai sugrėbkite arba prispauskite sėklas prie dirvos.", "step6_title": "Palaikykite drėgną paviršių", "step6_text": "Dygimo metu laistykite lengvai ir dažnai tiek, kad viršutinis dirvos sluoksnis neišdžiūtų. Venkite stiprios srovės, kuri gali nuplauti sėklas.", "step7_title": "Atsėkite išretėjusias vietas", "step7_text": "Vejai įsitvirtinus suraskite plikas ar retas vietas. Paviršių supurenkite, įberkite sėklų, prispauskite ir palaikykite drėgmę iki sudygimo.", "step8_title": "Pirmasis pjovimas", "step8_text": "Pirmą kartą pjaukite, kai žolė gerai įsišaknijusi ir pasiekia maždaug 8–10 cm. Nupjaukite tik viršutinį trečdalį ir naudokite aštrų peilį.", "calc_eyebrow": "Praktiniai įrankiai", "calc_title": "Sėklų ir trąšų skaičiuoklės", "calc_intro": "Skaičiuokles naudokite planavimui. Gautą rezultatą visada palyginkite su norma, nurodyta ant konkrečių sėklų ar trąšų pakuotės.", "seed_calc_title": "Vejos sėklų skaičiuoklė", "seed_calc_text": "Apskaičiuokite, kiek kilogramų sėklų reikia pasirinktam plotui.", "lawn_area": "Vejos plotas (m²)", "seed_rate": "Sėjos norma (g/m²)", "required_seed": "Reikalingas sėklų kiekis", "seed_note": "Naujai vejai dažnai naudojama apie 25–40 g/m², tačiau vadovaukitės konkretaus mišinio norma.", "fert_calc_title": "Trąšų kiekio skaičiuoklė", "fert_calc_text": "Apskaičiuokite produkto kiekį pagal ant pakuotės nurodytą normą.", "product_rate": "Produkto norma (g/m²)", "required_fert": "Reikalingas trąšų kiekis", "fert_note": "Nedidinkite dozės tikėdamiesi greičiau pažalinti veją. Trąšų perteklius gali nudeginti žolę ir padidinti ligų riziką.", "grass_eyebrow": "Sėklų pasirinkimas", "grass_title": "Žolių rūšys ir vejų mišiniai", "grass_intro": "Dauguma vejos sėklų yra kelių vėsaus klimato žolių rūšių mišiniai. Tikslios proporcijos priklauso nuo gamintojo, tačiau žemiau pateiktos rūšys padeda suprasti mišinio savybes.", "species_rye": "Daugiametė svidrė", "species_rye_text": "Labai greitai dygsta ir gerai pakelia mindymą. Tinka greitam įrengimui, šeimos vejoms, atsėjimui ir sportui.", "species_blue": "Pievinė miglė", "species_blue_text": "Formuoja požeminius šakniastiebius, todėl gerai atsistato po pažeidimų. Įsitvirtinusi yra tanki ir patvari, tačiau dygsta lėčiau.", "species_red": "Raudonasis eraičinas", "species_red_text": "Smulkialapė žolė, tinkanti dekoratyvinėms vejoms, skurdesnei dirvai ir daliniam pavėsiui. Paprastai auga lėčiau nei svidrė.", "species_tall": "Aukštasis eraičinas", "species_tall_text": "Giliai šaknijasi ir geriau pakelia karštį bei sausrą. Tinka ten, kur laistymas ribotas arba dirva greitai išdžiūsta.", "species_fine": "Smulkialapiai eraičinai", "species_fine_text": "Apima kietąjį, avinį ir kitus smulkialapius eraičinus. Dažnai naudojami mažai priežiūros reikalaujančiuose, pavėsiui tinkamuose ir lėčiau augančiuose mišiniuose.", "fert_eyebrow": "Mityba", "fert_title": "Kada ir kaip tręšti", "fert_intro": "Vėsaus klimato vejos sparčiausiai auga pavasarį ir rudenį. Tręšimas turi palaikyti natūralų augimo ritmą, o ne skatinti veją per karščius ar sausrą.", "problem_eyebrow": "Problemų sprendimas", "problem_title": "Ką daryti, kai žolė ruduoja", "problem_intro": "Parudavimas yra simptomas, o ne diagnozė. Pirmiausia įvertinkite pažeidimo formą ir vietą: ar jis tolygus, apskritas, palei kraštus, atsirado po tręšimo, pjovimo ar tik suslėgtose vietose.", "calendar_eyebrow": "Priežiūra visus metus", "calendar_title": "Sezoninis vejos kalendorius", "calendar_intro": "Praktinis vėsaus klimato vejos kalendorius, tinkamas Šiaurės Europos sąlygoms. Tikslus laikas priklauso nuo dirvos temperatūros, kritulių ir vietos orų.", "spring": "Pavasaris", "summer": "Vasara", "autumn": "Ruduo", "winter": "Žiema", "journey_eyebrow": "Vejos progreso istorija", "journey_title": "Mano vejos kelias", "journey_intro": "Šešių etapų pavyzdys, kaip veja pereina nuo paruoštos dirvos iki sudygimo, atsėjimo ir pirmojo pjovimo.", "journey_prepared": "Paruošta dirva", "journey_watering": "Laistymas", "journey_seedlings": "Pirmieji daigai", "journey_lush": "Sužėlusi veja", "journey_reseed": "Išretėjusių vietų atsėjimas", "journey_mowing": "Pirmasis pjovimas", "cta_title": "Gera vejos priežiūra pirmiausia yra nuoseklumas.", "cta_text": "Rinkitės vietai tinkantį sėklų mišinį, kruopščiai paruoškite dirvą, neperlaistykite ir nepertręškite, pjaukite aštriu peiliu, o silpnas vietas tvarkykite anksti. Veja ilgainiui stiprėja tada, kai leidžiama vystytis šaknims, o ne kai augimas pernelyg skatinamas.", "footer_title": "GREEN — išsamus vejos auginimo gidas", "footer_sub": "Prisitaikanti vieno puslapio svetainė"}, "lv": {"language_label": "Valoda", "nav_process": "Process", "nav_calculators": "Kalkulatori", "nav_grass": "Zāles veidi", "nav_fertilizing": "Mēslošana", "nav_problems": "Problēmas", "nav_calendar": "Kalendārs", "nav_journey": "Zāliena ceļš", "eyebrow_main": "Praktisks zāliena ceļvedis", "hero_title": "No kailas augsnes līdz stipram un veselīgam zālienam.", "hero_text": "Pilnīgs ceļvedis par augsnes sagatavošanu, piemērota zāles sēklu maisījuma izvēli, sēšanu, laistīšanu, mēslošanu, brūnu vai retu vietu atjaunošanu un zāliena kopšanu visa gada garumā.", "hero_btn_process": "Sākt ar procesu", "hero_btn_grass": "Izvēlēties zāles veidu", "hero_caption": "Blīvs zāliens sākas ar labu sagatavošanu, piemērotām sēklām un regulāru kopšanu.", "process_eyebrow": "Soli pa solim", "process_title": "Kā ierīkot zālienu", "process_intro": "Jauna zāliena kvalitāti galvenokārt nosaka augsnes sagatavošana, labs sēklu kontakts ar augsni, laistīšana dīgšanas laikā un pareiza pirmā pļaušana.", "step1_title": "Notīriet un novērtējiet laukumu", "step1_text": "Noņemiet būvgružus, akmeņus, daudzgadīgās nezāles, veco velēnu un saknes. Pirms pēdējā augsnes slāņa uzklāšanas pārbaudiet drenāžu.", "step2_title": "Sagatavojiet virskārtu", "step2_text": "Uzirdiniet sablīvētu augsni, izlīdziniet laukumu un izveidojiet smalku, vienmērīgu sēklas gultni. Neatstājiet dziļas mīkstas vietas, kas vēlāk nosēdīsies.", "step3_title": "Nostipriniet un izlīdziniet", "step3_text": "Viegli norullējiet vai pieblietējiet augsni. Virsmai jābūt stabilai, bet ne pārāk cietai, lai saknes varētu attīstīties.", "step4_title": "Izvēlieties pareizo sēklu maisījumu", "step4_text": "Izvēlieties pēc izmantošanas: dekoratīvs, ģimenes, sporta/intensīvas slodzes, ēnai, sausumizturīgs vai maz kopjams zāliens. Sugu sastāvs ir svarīgāks par attēlu uz iepakojuma.", "step5_title": "Sējiet vienmērīgi", "step5_text": "Sēklas sadaliet divās vienādās daļās un sējiet krusteniskos virzienos. Viegli iegrābiet vai piespiediet sēklas pie augsnes.", "step6_title": "Uzturiet virsmu mitru", "step6_text": "Dīgšanas laikā laistiet viegli un pietiekami bieži, lai virskārta neizžūtu. Izvairieties no stipras ūdens strūklas, kas var pārvietot sēklas.", "step7_title": "Atjaunojiet retās vietas", "step7_text": "Kad zāliens nostiprinājies, atrodiet plikas vai retas vietas. Uzirdiniet virsmu, iesējiet, piespiediet un uzturiet mitrumu līdz sadīgšanai.", "step8_title": "Pirmā pļaušana", "step8_text": "Pirmo reizi pļaujiet, kad zāle ir labi iesakņojusies un sasniegusi apmēram 8–10 cm. Nogrieziet tikai augšējo trešdaļu un izmantojiet asu asmeni.", "calc_eyebrow": "Praktiski rīki", "calc_title": "Sēklu un mēslojuma kalkulatori", "calc_intro": "Izmantojiet kalkulatorus plānošanai. Rezultātu vienmēr salīdziniet ar normu uz konkrētā sēklu vai mēslojuma iepakojuma.", "seed_calc_title": "Zāliena sēklu kalkulators", "seed_calc_text": "Aprēķiniet, cik kilogramu sēklu vajag izvēlētajai platībai.", "lawn_area": "Zāliena platība (m²)", "seed_rate": "Sējas norma (g/m²)", "required_seed": "Nepieciešamais sēklu daudzums", "seed_note": "Jaunam zālienam bieži izmanto apmēram 25–40 g/m², bet ievērojiet konkrētā maisījuma norādi.", "fert_calc_title": "Mēslojuma daudzuma kalkulators", "fert_calc_text": "Aprēķiniet produkta daudzumu pēc norādītās lietošanas normas.", "product_rate": "Produkta norma (g/m²)", "required_fert": "Nepieciešamais mēslojuma daudzums", "fert_note": "Nepalieliniet devu, lai zāliens ātrāk kļūtu zaļš. Pārmērīgs mēslojums var apdedzināt zāli un palielināt slimību risku.", "grass_eyebrow": "Sēklu izvēle", "grass_title": "Zāles sugas un zāliena maisījumi", "grass_intro": "Lielākā daļa zāliena sēklu produktu ir vairāku vēsā klimata zāļu sugu maisījumi. Precīzās proporcijas atšķiras, bet zemāk minētās sugas palīdz saprast maisījuma īpašības.", "species_rye": "Daudzgadīgā airene", "species_rye_text": "Ļoti ātri dīgst un labi iztur slodzi. Piemērota ātrai ierīkošanai, ģimenes zālieniem, remontam un sportam.", "species_blue": "Pļavas skarene", "species_blue_text": "Veido pazemes sakneņus, kas palīdz atjaunoties pēc bojājumiem. Pēc iesakņošanās ir blīva un izturīga, bet dīgst lēnāk.", "species_red": "Sarkanā auzene", "species_red_text": "Smalklapu zāle dekoratīviem zālieniem, nabadzīgākai augsnei un daļējai ēnai. Parasti aug lēnāk nekā airene.", "species_tall": "Niedru auzene", "species_tall_text": "Dziļi sakņojas un labāk panes karstumu un sausumu. Piemērota vietām ar ierobežotu laistīšanu vai ātri izžūstošu augsni.", "species_fine": "Smalklapu auzenes", "species_fine_text": "Ietver cieto, aitu un citas smalklapu auzenes. Bieži izmanto maz kopjamos, ēnainiem apstākļiem piemērotos un lēnāk augošos maisījumos.", "fert_eyebrow": "Barošana", "fert_title": "Kad un kā mēslot", "fert_intro": "Vēsā klimata zālieni visaktīvāk aug pavasarī un rudenī. Mēslošanai jāatbalsta dabiskais augšanas ritms, nevis jāveicina augšana karstumā vai sausumā.", "problem_eyebrow": "Problēmu risināšana", "problem_title": "Ko darīt, ja zāle kļūst brūna", "problem_intro": "Brūnēšana ir simptoms, nevis diagnoze. Vispirms novērtējiet bojājuma formu un vietu: vienmērīgs, apaļš, gar malām, pēc mēslošanas, pļaušanas vai tikai sablīvētās vietās.", "calendar_eyebrow": "Kopšana visa gada garumā", "calendar_title": "Sezonālais zāliena kalendārs", "calendar_intro": "Praktisks vēsā klimata zāliena kalendārs Ziemeļeiropas apstākļiem. Precīzs laiks atkarīgs no augsnes temperatūras, nokrišņiem un vietējiem laikapstākļiem.", "spring": "Pavasaris", "summer": "Vasara", "autumn": "Rudens", "winter": "Ziema", "journey_eyebrow": "Vizuālais progress", "journey_title": "Mana zāliena attīstība", "journey_intro": "Sešu posmu piemērs no sagatavotas augsnes līdz ieaugšanai, atjaunošanai un pirmajai pļaušanai.", "journey_prepared": "Sagatavota augsne", "journey_watering": "Laistīšana", "journey_seedlings": "Pirmie dīgsti", "journey_lush": "Saaugusi zāle", "journey_reseed": "Retu vietu pārsēšana", "journey_mowing": "Pirmā pļaušana", "cta_title": "Laba zāliena kopšana galvenokārt ir konsekvence.", "cta_text": "Izvēlieties vietai piemērotu sēklu maisījumu, rūpīgi sagatavojiet augsni, nepārlaistiet un nepārmēslojiet, pļaujiet ar asu asmeni un savlaicīgi atjaunojiet vājas vietas. Zāliens kļūst stiprāks, ja saknēm ļauj attīstīties dabiski.", "footer_title": "GREEN — pilnīgs zāliena audzēšanas ceļvedis", "footer_sub": "Pielāgojama vienas lapas vietne"}, "pl": {"language_label": "Język", "nav_process": "Proces", "nav_calculators": "Kalkulatory", "nav_grass": "Rodzaje traw", "nav_fertilizing": "Nawożenie", "nav_problems": "Problemy", "nav_calendar": "Kalendarz", "nav_journey": "Droga trawnika", "eyebrow_main": "Praktyczny poradnik trawnikowy", "hero_title": "Od gołej ziemi do mocnego, zdrowego trawnika.", "hero_text": "Kompletny poradnik dotyczący przygotowania gleby, wyboru mieszanki nasion, siewu, podlewania, nawożenia, naprawy brązowych lub przerzedzonych miejsc oraz pielęgnacji trawnika przez cały rok.", "hero_btn_process": "Zacznij od procesu", "hero_btn_grass": "Wybierz rodzaj trawy", "hero_caption": "Gęsty trawnik powstaje dzięki dobremu przygotowaniu, właściwym nasionom i regularnej pielęgnacji.", "process_eyebrow": "Krok po kroku", "process_title": "Jak założyć trawnik", "process_intro": "Jakość nowego trawnika zależy głównie od przygotowania gleby, dobrego kontaktu nasion z podłożem, podlewania podczas kiełkowania i prawidłowego pierwszego koszenia.", "step1_title": "Oczyść i oceń teren", "step1_text": "Usuń odpady budowlane, kamienie, chwasty wieloletnie, starą darń i korzenie. Sprawdź drenaż przed ułożeniem końcowej warstwy gleby.", "step2_title": "Przygotuj warstwę wierzchnią", "step2_text": "Spulchnij zbitą glebę, wyrównaj teren i przygotuj drobną, równą warstwę siewną. Nie zostawiaj głębokich miękkich miejsc, które później osiądą.", "step3_title": "Ustabilizuj i wyrównaj", "step3_text": "Lekko zwałuj lub ubij glebę. Powierzchnia powinna być stabilna, ale nie zbyt twarda, aby korzenie mogły się rozwijać.", "step4_title": "Wybierz odpowiednią mieszankę nasion", "step4_text": "Dobieraj według zastosowania: dekoracyjna, rodzinna, sportowa/intensywnie użytkowana, do cienia, odporna na suszę lub mało wymagająca. Skład gatunkowy jest ważniejszy niż zdjęcie na opakowaniu.", "step5_title": "Siej równomiernie", "step5_text": "Podziel nasiona na dwie równe części i siej w dwóch krzyżujących się kierunkach. Lekko zagrab lub dociśnij nasiona do gleby.", "step6_title": "Utrzymuj wilgotną powierzchnię", "step6_text": "Podczas kiełkowania podlewaj lekko i wystarczająco często, aby wierzchnia warstwa nie wyschła. Unikaj silnego strumienia, który może przemieścić nasiona.", "step7_title": "Dosiej przerzedzone miejsca", "step7_text": "Po ukorzenieniu znajdź puste lub rzadkie miejsca. Spulchnij powierzchnię, dosiej, dociśnij i utrzymuj wilgoć do czasu kiełkowania.", "step8_title": "Pierwsze koszenie", "step8_text": "Pierwsze koszenie wykonaj, gdy trawa jest dobrze ukorzeniona i ma około 8–10 cm. Zetnij tylko górną jedną trzecią i użyj ostrego noża.", "calc_eyebrow": "Praktyczne narzędzia", "calc_title": "Kalkulatory nasion i nawozu", "calc_intro": "Używaj kalkulatorów do planowania. Wynik zawsze porównaj z dawką podaną na opakowaniu konkretnej mieszanki lub nawozu.", "seed_calc_title": "Kalkulator nasion trawy", "seed_calc_text": "Oblicz, ile kilogramów nasion potrzeba na wybraną powierzchnię.", "lawn_area": "Powierzchnia trawnika (m²)", "seed_rate": "Norma wysiewu (g/m²)", "required_seed": "Potrzebna ilość nasion", "seed_note": "Dla nowego trawnika często stosuje się około 25–40 g/m², ale należy użyć dawki podanej dla konkretnej mieszanki.", "fert_calc_title": "Kalkulator ilości nawozu", "fert_calc_text": "Oblicz ilość produktu na podstawie dawki z opakowania.", "product_rate": "Dawka produktu (g/m²)", "required_fert": "Potrzebna ilość nawozu", "fert_note": "Nie zwiększaj dawki, aby trawnik szybciej się zazielenił. Nadmiar nawozu może przypalić trawę i zwiększyć ryzyko chorób.", "grass_eyebrow": "Wybór nasion", "grass_title": "Gatunki traw i mieszanki trawnikowe", "grass_intro": "Większość produktów to mieszanki kilku gatunków traw chłodnego klimatu. Dokładne proporcje zależą od producenta, ale poniższe gatunki pomagają zrozumieć charakter mieszanki.", "species_rye": "Życica trwała", "species_rye_text": "Bardzo szybko kiełkuje i dobrze znosi użytkowanie. Świetna do szybkiego zakładania, trawników rodzinnych, napraw i zastosowań sportowych.", "species_blue": "Wiechlina łąkowa", "species_blue_text": "Tworzy podziemne rozłogi, dzięki czemu dobrze regeneruje się po uszkodzeniach. Po ukorzenieniu jest gęsta i trwała, ale kiełkuje wolniej.", "species_red": "Kostrzewa czerwona", "species_red_text": "Trawa drobnolistna do trawników dekoracyjnych, słabszych gleb i półcienia. Zwykle rośnie wolniej niż życica.", "species_tall": "Kostrzewa trzcinowa", "species_tall_text": "Głęboko się korzeni i lepiej znosi upał oraz suszę. Dobra tam, gdzie podlewanie jest ograniczone lub gleba szybko wysycha.", "species_fine": "Kostrzewy drobnolistne", "species_fine_text": "Obejmują kostrzewę twardą, owczą i inne drobnolistne. Często występują w mieszankach mało wymagających, cienioznośnych i wolniej rosnących.", "fert_eyebrow": "Odżywianie", "fert_title": "Kiedy i jak nawozić", "fert_intro": "Trawniki chłodnego klimatu najsilniej rosną wiosną i jesienią. Nawożenie powinno wspierać naturalny rytm wzrostu, a nie wymuszać go podczas upałów czy suszy.", "problem_eyebrow": "Rozwiązywanie problemów", "problem_title": "Co robić, gdy trawa brązowieje", "problem_intro": "Brązowienie jest objawem, a nie diagnozą. Najpierw oceń kształt i miejsce uszkodzenia: równomierne, okrągłe, przy krawędziach, po nawożeniu, po koszeniu czy tylko w miejscach ubitych.", "calendar_eyebrow": "Pielęgnacja przez cały rok", "calendar_title": "Sezonowy kalendarz trawnika", "calendar_intro": "Praktyczny kalendarz trawnika chłodnego klimatu odpowiedni dla Europy Północnej. Dokładny termin zależy od temperatury gleby, opadów i lokalnej pogody.", "spring": "Wiosna", "summer": "Lato", "autumn": "Jesień", "winter": "Zima", "journey_eyebrow": "Postęp wizualny", "journey_title": "Moja droga do trawnika", "journey_intro": "Sześć etapów pokazujących drogę od przygotowanej gleby do wzrostu, naprawy i pierwszego koszenia.", "journey_prepared": "Przygotowana gleba", "journey_watering": "Podlewanie", "journey_seedlings": "Pierwsze siewki", "journey_lush": "Gęsta zielona trawa", "journey_reseed": "Dosiewanie rzadkich miejsc", "journey_mowing": "Pierwsze koszenie", "cta_title": "Dobra pielęgnacja trawnika to przede wszystkim regularność.", "cta_text": "Dobierz mieszankę do rzeczywistych warunków, starannie przygotuj glebę, nie przelewaj i nie przenawoź, koś ostrym nożem i wcześnie naprawiaj słabe miejsca. Trawnik z czasem staje się mocniejszy, gdy korzenie mogą rozwijać się naturalnie.", "footer_title": "GREEN — kompletny poradnik zakładania trawnika", "footer_sub": "Responsywna strona typu one-page"}, "et": {"language_label": "Keel", "nav_process": "Protsess", "nav_calculators": "Kalkulaatorid", "nav_grass": "Muruliigid", "nav_fertilizing": "Väetamine", "nav_problems": "Probleemid", "nav_calendar": "Kalender", "nav_journey": "Muru teekond", "eyebrow_main": "Praktiline murujuhend", "hero_title": "Paljast mullast tugeva ja terve muruni.", "hero_text": "Täielik juhend pinnase ettevalmistamiseks, sobiva muruseemnesegu valimiseks, külvamiseks, kastmiseks, väetamiseks, pruunide või hõredate kohtade parandamiseks ja muru hooldamiseks läbi aasta.", "hero_btn_process": "Alusta protsessist", "hero_btn_grass": "Vali murutüüp", "hero_caption": "Tihe muru sünnib heast ettevalmistusest, sobivatest seemnetest ja järjepidevast hooldusest.", "process_eyebrow": "Samm-sammult", "process_title": "Kuidas rajada muru", "process_intro": "Uue muru kvaliteedi määravad eelkõige pinnase ettevalmistus, seemne hea kontakt mullaga, kastmine idanemise ajal ja õige esimene niitmine.", "step1_title": "Puhasta ja hinda ala", "step1_text": "Eemalda ehituspraht, kivid, mitmeaastased umbrohud, vana kamar ja juured. Enne lõpliku mullakihi paigaldamist kontrolli drenaaži.", "step2_title": "Valmista pealmine mullakiht", "step2_text": "Kobesta tihenenud muld, tasanda ala ja loo peen ning ühtlane külvipind. Ära jäta sügavaid pehmeid kohti, mis hiljem vajuvad.", "step3_title": "Tihenda kergelt ja tasanda", "step3_text": "Rulli või tihenda mulda kergelt. Pind peab olema stabiilne, kuid mitte liiga kõva, et juured saaksid areneda.", "step4_title": "Vali õige seemnesegu", "step4_text": "Vali kasutuse järgi: dekoratiivne, pere-, spordi-/suure koormusega, varjutaluv, põuakindel või vähese hooldusega muru. Liigiline koostis on olulisem kui pilt pakendil.", "step5_title": "Külva ühtlaselt", "step5_text": "Jaga seeme kaheks võrdses osaks ja külva ristuvates suundades. Rehitse kergelt või suru seeme mullaga kontakti.", "step6_title": "Hoia pind niiske", "step6_text": "Idanemise ajal kasta õrnalt ja piisavalt sageli, et pealmine kiht ei kuivaks. Väldi tugevat veejuga, mis võib seemneid liigutada.", "step7_title": "Paranda hõredad kohad", "step7_text": "Kui muru on juurdunud, leia paljad või hõredad alad. Kobesta pind, külva juurde, suru seeme sisse ja hoia niiskust kuni idanemiseni.", "step8_title": "Esimene niitmine", "step8_text": "Niida esimest korda, kui muru on hästi juurdunud ja umbes 8–10 cm kõrge. Eemalda ainult ülemine kolmandik ning kasuta teravat tera.", "calc_eyebrow": "Praktilised tööriistad", "calc_title": "Seemne- ja väetisekalkulaatorid", "calc_intro": "Kasuta kalkulaatoreid planeerimiseks. Võrdle tulemust alati konkreetse seemne või väetise pakendil oleva normiga.", "seed_calc_title": "Muruseemne kalkulaator", "seed_calc_text": "Arvuta, mitu kilogrammi seemet on valitud pindala jaoks vaja.", "lawn_area": "Muru pindala (m²)", "seed_rate": "Külvinorm (g/m²)", "required_seed": "Vajalik seemnekogus", "seed_note": "Uue muru puhul kasutatakse sageli umbes 25–40 g/m², kuid järgi oma segu täpset normi.", "fert_calc_title": "Väetisekoguse kalkulaator", "fert_calc_text": "Arvuta tootekogus pakendil märgitud kasutusnormi järgi.", "product_rate": "Toote norm (g/m²)", "required_fert": "Vajalik väetisekogus", "fert_note": "Ära suurenda annust, et muru kiiremini roheliseks muutuks. Liigne väetis võib muru kõrvetada ja suurendada haigusriski.", "grass_eyebrow": "Seemne valik", "grass_title": "Muruliigid ja seemnesegud", "grass_intro": "Enamik muruseemneid on mitme jaheda kliima kõrrelise segu. Täpsed protsendid erinevad tootjati, kuid allpool toodud liigid aitavad segu omadusi mõista.", "species_rye": "Karjamaa raihein", "species_rye_text": "Idaneb väga kiiresti ja talub hästi tallamist. Sobib kiireks rajamiseks, pereõuele, parandusteks ja sportlikuks kasutuseks.", "species_blue": "Aasnurmikas", "species_blue_text": "Moodustab maa-aluseid risoomvõsundeid, mis aitavad kahjustustest taastuda. Juurdunult tihe ja vastupidav, kuid idaneb aeglasemalt.", "species_red": "Punane aruhein", "species_red_text": "Peeneleheline liik dekoratiivmurule, vähem viljakale mullale ja poolvarju. Kasvab tavaliselt aeglasemalt kui raihein.", "species_tall": "Roog-aruhein", "species_tall_text": "Sügava juurestikuga ja talub paremini kuumust ning põuda. Sobib kohtadesse, kus kastmist on vähe või muld kuivab kiiresti.", "species_fine": "Peenelehelised aruheinad", "species_fine_text": "Hõlmavad jäika aruheinastikku, lambaaruheina ja teisi peenelehelisi liike. Kasutatakse sageli vähese hooldusega, varjutaluvates ja aeglasemalt kasvavates segudes.", "fert_eyebrow": "Toitumine", "fert_title": "Millal ja kuidas väetada", "fert_intro": "Jaheda kliima muru kasvab kõige tugevamalt kevadel ja sügisel. Väetamine peaks toetama loomulikku kasvurütmi, mitte sundima kasvu kuuma või põua ajal.", "problem_eyebrow": "Probleemide lahendamine", "problem_title": "Mida teha, kui muru pruunistub", "problem_intro": "Pruunistumine on sümptom, mitte diagnoos. Vaata esmalt kahjustuse kuju ja asukohta: ühtlane, ringikujuline, servades, pärast väetamist, pärast niitmist või ainult tihenenud kohtades.", "calendar_eyebrow": "Aastaringne hooldus", "calendar_title": "Hooajaline murukalender", "calendar_intro": "Praktiline jaheda kliima murukalender Põhja-Euroopa tingimustesse. Täpne ajastus sõltub mullatemperatuurist, sademetest ja kohalikust ilmast.", "spring": "Kevad", "summer": "Suvi", "autumn": "Sügis", "winter": "Talv", "journey_eyebrow": "Visuaalne areng", "journey_title": "Minu muru teekond", "journey_intro": "Kuue etapiga näide mulla ettevalmistusest kuni juurdumise, parandamise ja esimese niitmiseni.", "journey_prepared": "Ettevalmistatud muld", "journey_watering": "Kastmine", "journey_seedlings": "Esimesed tõusmed", "journey_lush": "Tihe roheline muru", "journey_reseed": "Hõredate kohtade järelkülv", "journey_mowing": "Esimene niitmine", "cta_title": "Hea muruhooldus on eelkõige järjepidevus.", "cta_text": "Vali kasvukohale sobiv seemnesegu, valmista muld hoolikalt ette, väldi ülekastmist ja üleväetamist, niida terava teraga ning paranda nõrgad kohad varakult. Muru muutub ajaga tugevamaks, kui juurtel lastakse loomulikult areneda.", "footer_title": "GREEN — täielik murukasvatuse juhend", "footer_sub": "Kohanduv üheleheline veebileht"}, "de": {"language_label": "Sprache", "nav_process": "Ablauf", "nav_calculators": "Rechner", "nav_grass": "Grasarten", "nav_fertilizing": "Düngung", "nav_problems": "Probleme", "nav_calendar": "Kalender", "nav_journey": "Rasenweg", "eyebrow_main": "Praktischer Rasenratgeber", "hero_title": "Vom nackten Boden zum kräftigen, gesunden Rasen.", "hero_text": "Ein vollständiger Leitfaden zur Bodenvorbereitung, Auswahl der passenden Rasensaatmischung, Aussaat, Bewässerung, Düngung, Reparatur brauner oder lichter Stellen und Pflege über das ganze Jahr.", "hero_btn_process": "Mit dem Ablauf beginnen", "hero_btn_grass": "Grasart auswählen", "hero_caption": "Ein dichter Rasen entsteht durch gute Vorbereitung, passende Saat und konsequente Pflege.", "process_eyebrow": "Schritt für Schritt", "process_title": "So legen Sie einen Rasen an", "process_intro": "Die Qualität eines neuen Rasens hängt vor allem von Bodenvorbereitung, gutem Saat-Boden-Kontakt, Bewässerung während der Keimung und dem richtigen ersten Schnitt ab.", "step1_title": "Fläche reinigen und prüfen", "step1_text": "Bauschutt, Steine, mehrjährige Unkräuter, alte Grasnarbe und Wurzeln entfernen. Vor der letzten Bodenschicht die Entwässerung prüfen.", "step2_title": "Oberboden vorbereiten", "step2_text": "Verdichteten Boden lockern, die Fläche ebnen und ein feines, gleichmäßiges Saatbett herstellen. Tiefe weiche Stellen vermeiden, die später absacken.", "step3_title": "Leicht festigen und ebnen", "step3_text": "Den Boden leicht walzen oder andrücken. Die Oberfläche soll stabil, aber nicht zu hart sein, damit Wurzeln eindringen können.", "step4_title": "Die richtige Saatmischung wählen", "step4_text": "Nach Nutzung wählen: Zierrasen, Familienrasen, Sport-/stark beanspruchter Rasen, Schatten, Trockenheit oder pflegearm. Die Artenzusammensetzung ist wichtiger als das Bild auf der Verpackung.", "step5_title": "Gleichmäßig säen", "step5_text": "Saatgut in zwei gleiche Portionen teilen und kreuzweise ausbringen. Anschließend leicht einharken oder andrücken.", "step6_title": "Oberfläche feucht halten", "step6_text": "Während der Keimung leicht und häufig genug wässern, damit die oberste Bodenschicht nicht austrocknet. Starke Wasserstrahlen vermeiden.", "step7_title": "Lichte Stellen nachsäen", "step7_text": "Nach der Etablierung kahle oder dünne Bereiche erkennen. Oberfläche lockern, nachsäen, andrücken und bis zur Keimung feucht halten.", "step8_title": "Erster Schnitt", "step8_text": "Erstmals mähen, wenn der Rasen gut verwurzelt und etwa 8–10 cm hoch ist. Nur das obere Drittel schneiden und ein scharfes Messer verwenden.", "calc_eyebrow": "Praktische Werkzeuge", "calc_title": "Saatgut- und Düngerrechner", "calc_intro": "Die Rechner dienen der Planung. Vergleichen Sie das Ergebnis immer mit der Aufwandmenge auf der konkreten Saatgut- oder Düngerpackung.", "seed_calc_title": "Rasensaat-Rechner", "seed_calc_text": "Berechnen Sie, wie viele Kilogramm Saatgut für die gewählte Fläche benötigt werden.", "lawn_area": "Rasenfläche (m²)", "seed_rate": "Aussaatmenge (g/m²)", "required_seed": "Benötigtes Saatgut", "seed_note": "Für Neuanlagen liegen typische Mengen oft bei etwa 25–40 g/m². Maßgeblich ist jedoch die Angabe der konkreten Mischung.", "fert_calc_title": "Düngermengen-Rechner", "fert_calc_text": "Berechnen Sie die Produktmenge anhand der Aufwandmenge auf der Verpackung.", "product_rate": "Produktmenge (g/m²)", "required_fert": "Benötigte Düngermenge", "fert_note": "Erhöhen Sie die Dosis nicht, um den Rasen schneller grün zu bekommen. Zu viel Dünger kann Verbrennungen verursachen und Krankheiten fördern.", "grass_eyebrow": "Saatgutauswahl", "grass_title": "Grasarten und Rasenmischungen", "grass_intro": "Die meisten Rasensaatprodukte sind Mischungen mehrerer Gräser für kühles Klima. Die genauen Anteile unterscheiden sich je nach Hersteller; die folgenden Arten erklären das Verhalten der Mischung.", "species_rye": "Deutsches Weidelgras", "species_rye_text": "Keimt sehr schnell und ist stark belastbar. Ideal für schnelle Begrünung, Familienrasen, Reparaturen und Sportflächen.", "species_blue": "Wiesenrispe", "species_blue_text": "Bildet unterirdische Rhizome und kann sich dadurch gut regenerieren. Nach der Etablierung dicht und robust, aber langsamer in der Keimung.", "species_red": "Rotschwingel", "species_red_text": "Feinblättriges Gras für Zierrasen, nährstoffärmere Böden und Halbschatten. Wächst meist langsamer als Weidelgras.", "species_tall": "Rohrschwingel", "species_tall_text": "Tiefwurzelnd und hitze- sowie trockenheitsverträglicher. Geeignet bei begrenzter Bewässerung oder schnell austrocknenden Böden.", "species_fine": "Feinschwingel", "species_fine_text": "Dazu zählen Hartschwingel, Schafschwingel und andere feinblättrige Arten. Häufig in pflegearmen, schattenverträglichen und langsam wachsenden Mischungen.", "fert_eyebrow": "Nährstoffversorgung", "fert_title": "Wann und wie düngen", "fert_intro": "Rasen in kühlem Klima wächst im Frühjahr und Herbst am stärksten. Die Düngung sollte diesen natürlichen Rhythmus unterstützen und nicht bei Hitze oder Trockenheit Wachstum erzwingen.", "problem_eyebrow": "Fehlersuche", "problem_title": "Was tun, wenn der Rasen braun wird", "problem_intro": "Braunfärbung ist ein Symptom, keine Diagnose. Prüfen Sie zuerst Form und Lage der Schäden: gleichmäßig, kreisförmig, an Rändern, nach Düngung, nach dem Mähen oder nur auf verdichteten Stellen.", "calendar_eyebrow": "Pflege im Jahresverlauf", "calendar_title": "Saisonaler Rasenkalender", "calendar_intro": "Ein praktischer Kalender für Rasen in kühlem Klima und nordeuropäischen Bedingungen. Der genaue Zeitpunkt hängt von Bodentemperatur, Niederschlag und lokalem Wetter ab.", "spring": "Frühling", "summer": "Sommer", "autumn": "Herbst", "winter": "Winter", "journey_eyebrow": "Visueller Fortschritt", "journey_title": "Mein Rasenweg", "journey_intro": "Ein Beispiel in sechs Stufen: von vorbereitetem Boden über Anwuchs und Nachsaat bis zum ersten Schnitt.", "journey_prepared": "Vorbereiteter Boden", "journey_watering": "Bewässerung", "journey_seedlings": "Erste Keimlinge", "journey_lush": "Dichter grüner Rasen", "journey_reseed": "Nachsaat lichter Stellen", "journey_mowing": "Erster Schnitt", "cta_title": "Gute Rasenpflege bedeutet vor allem Konsequenz.", "cta_text": "Wählen Sie eine zum Standort passende Saatmischung, bereiten Sie den Boden sorgfältig vor, vermeiden Sie Überwässerung und Überdüngung, mähen Sie mit scharfem Messer und reparieren Sie schwache Stellen frühzeitig. Ein Rasen wird mit der Zeit stärker, wenn sich die Wurzeln natürlich entwickeln können.", "footer_title": "GREEN — vollständiger Rasenratgeber", "footer_sub": "Responsive One-Page-Website"}};
+const blockTranslations = {"lt": {"fert_rows": [["Ankstyvas pavasaris", "Tikslas: atnaujinti augimą", "Kai veja pradeda aktyviai augti, naudokite pavasarines vejos trąšas su vidutiniu ar didesniu azoto kiekiu. Netręškite įšalusios ar užmirkusios dirvos.", "Tipinis pasirinkimas", "Rinkitės NPK trąšas, kuriose azotas (N) yra pagrindinė maistinė medžiaga. Laikykitės etiketės normos."], ["Vėlyvas pavasaris", "Tikslas: tankumas ir spalva", "Subalansuotos trąšos padeda lapų augimui ir atsistatymui po pavasarinio naudojimo.", "Tipinis pasirinkimas", "Vidutinis azoto ir kalio kiekis. Fosforas ypač naudingas įrengimo metu arba kai jo trūkumą rodo dirvožemio tyrimas."], ["Vasara", "Tikslas: neperkrauti vejos", "Karštu ir sausu laikotarpiu sumažinkite arba atidėkite azotinį tręšimą.", "Tipinis pasirinkimas", "Jei veja laistoma ir aktyviai auga, naudokite lengvesnę normą. Kitu atveju palaukite vėsesnių ir drėgnesnių sąlygų."], ["Ankstyvas ruduo", "Tikslas: atsistatymas ir šaknų stiprinimas", "Ruduo yra svarbus vėsaus klimato vejos tręšimo laikotarpis, ypač po vasaros streso arba atsėjimo.", "Tipinis pasirinkimas", "Tinka trąšos su azotu ir kaliu. Kalis padeda didinti atsparumą stresui."], ["Vėlyvas ruduo", "Tikslas: pasiruošimas žiemai", "Naudokite tik rudeniniam ar žieminiam vejos tręšimui skirtus produktus ir tik kol veja dar aktyvi.", "Tipinis pasirinkimas", "Dažnos rudeninių trąšų savybės – mažiau azoto ir daugiau kalio. Venkite per didelio vėlyvo minkšto augimo."]], "problems": [["Tolygus rudavimas karštu ir sausu oru", "Tikėtina priežastis: sausros stresas arba laikinas vasaros ramybės periodas.", "Įsitvirtinusią veją laistykite rečiau, bet gausiau.|Laistykite anksti ryte.|Karščio metu didinkite pjovimo aukštį.|Sausos, stresą patiriančios vejos stipriomis azotinėmis trąšomis netręškite."], ["Rudi galiukai iškart po pjovimo", "Tikėtina priežastis: bukas peilis, per žemas pjovimas arba per daug nupjauta vienu kartu.", "Pagaląskite peilį.|Laikykitės trečdalio taisyklės.|Kol veja atsigauna, padidinkite pjovimo aukštį."], ["Rudos ar geltonos juostos po tręšimo", "Tikėtina priežastis: trąšų nudeginimas arba persidengę barstytuvo pravažiavimai.", "Jei leidžia etiketė, pažeistas vietas gerai palaistykite.|Daugiau trąšų nebarkite.|Kitą kartą sukalibruokite barstytuvą ir dozę dalykite į du kryžminius pravažiavimus."], ["Mažos negyvos dėmės su tamsiai žalia žole aplink", "Tikėtina priežastis: koncentruotas šlapimas, druskos ar cheminės medžiagos.", "Kuo greičiau gausiai praplaukite vandeniu.|Jei reikia, stipriai pažeistą velėną pašalinkite ir atsėkite."], ["Netaisyklingos plintančios dėmės drėgnu oru", "Galima priežastis: grybinė liga, ypač kai lapai ilgai išlieka šlapi.", "Laistykite ryte, ne vėlai vakare.|Pagerinkite oro cirkuliaciją ir venkite perteklinio azoto.|Mažinkite ilgalaikį lapų drėgnumą."], ["Reta žolė po medžiais ar prie tvorų", "Tikėtina priežastis: pavėsis ir konkurencija dėl vandens bei maisto medžiagų.", "Naudokite pavėsiui skirtą mišinį su eraičinais.|Kur tikslinga, praretinkite augaliją, kad būtų daugiau šviesos ir oro.|Pjaukite kiek aukščiau."], ["Pliki takai ten, kur dažnai vaikštoma", "Tikėtina priežastis: dirvos suslėgimas ir mindymas.", "Aerokite suslėgtą dirvą.|Atsėkite mindymui atspariu mišiniu.|Kol nauja žolė įsišaknys, sumažinkite apkrovą."], ["Žolė lengvai išsirauna arba žūsta nepaisant laistymo", "Galima priežastis: seklus įsišaknijimas, šaknų pažeidimai, stiprus suslėgimas arba prasta dirva.", "Patikrinkite, ar šaknys iš tikrųjų išsivysčiusios.|Įvertinkite suslėgimą ir drenažą.|Jei šaknų zona prasta, vietą atnaujinkite."]], "calendar_lists": [["Po žiemos pašalinkite šiukšles, kai dirva pradžiūsta.", "Grėbkite tik tada, kai velėna pakankamai tvirta.", "Taisykite žiemos pažeidimus ir plikas vietas.", "Pavasarines trąšas naudokite prasidėjus aktyviam augimui.", "Pradėkite pjauti aštriu peiliu."], ["Sausromis laistykite gausiau.", "Karščio metu didinkite pjovimo aukštį.", "Sausros metu venkite gausaus azoto.", "Stebėkite ligas, sausas vietas ir suslėgimą.", "Peiliai turi būti aštrūs."], ["Puikus metas atsėjimui ir remontui.", "Jei reikia, aeruokite suslėgtas vietas.", "Naudokite rudeniniam laikotarpiui tinkamas trąšas.", "Reguliariai surinkite lapus.", "Lėtėjant augimui palaipsniui mažinkite pjovimo dažnį."], ["Venkite vaikščioti ant įšalusios ar užmirkusios velėnos.", "Netręškite įšalusios dirvos.", "Prižiūrėkite vejapjovę ir barstytuvą.", "Suplanuokite pavasario remonto darbus ir sėklų poreikį.", "Po atlydžio įvertinkite drenažo problemas."]]}, "lv": {"fert_rows": [["Agrs pavasaris", "Mērķis: atsākt augšanu", "Kad zāliens sāk aktīvi augt, lietojiet pavasara mēslojumu ar vidēju vai augstāku slāpekļa saturu. Nemēslojiet sasalušu vai pārmitru augsni.", "Tipiska pieeja", "Izvēlieties NPK produktu, kurā slāpeklis (N) ir dominējošā barības viela. Ievērojiet etiķetes normu."], ["Vēls pavasaris", "Mērķis: blīvums un krāsa", "Sabalansēts mēslojums atbalsta lapu augšanu un atjaunošanos pēc pavasara slodzes.", "Tipiska pieeja", "Mērens slāpekļa un kālija daudzums. Fosfors īpaši noder ierīkošanas laikā vai ja tā trūkumu rāda augsnes analīze."], ["Vasara", "Mērķis: izvairīties no stresa", "Karstā un sausā laikā samaziniet vai atlikiet slāpekļa mēslojumu.", "Tipiska pieeja", "Ja zāliens tiek laistīts un aktīvi aug, izmantojiet vieglāku devu. Citādi gaidiet vēsākus un mitrākus apstākļus."], ["Agrs rudens", "Mērķis: atjaunošanās un saknes", "Rudens ir svarīgs mēslošanas periods vēsā klimata zālieniem, īpaši pēc vasaras stresa vai pārsēšanas.", "Tipiska pieeja", "Izmantojiet mēslojumu ar slāpekli un kāliju. Kālijs palīdz stresa izturībai."], ["Vēls rudens", "Mērķis: sagatavošanās ziemai", "Lietojiet tikai rudenim/ziemai paredzētus produktus un tikai kamēr zāliens vēl ir aktīvs.", "Tipiska pieeja", "Parasti mazāk slāpekļa un vairāk kālija. Izvairieties no pārmērīga vēla mīksta auguma."]], "problems": [["Vienmērīga brūnēšana karstā un sausā laikā", "Iespējamais cēlonis: sausuma stress vai īslaicīgs vasaras miera periods.", "Iesakņotu zālienu laistiet retāk, bet pamatīgāk.|Laistiet agri no rīta.|Karstumā pļaujiet augstāk.|Nemēslojiet sausu, stresa skartu zālienu ar stipru slāpekli."], ["Brūni gali tūlīt pēc pļaušanas", "Iespējamais cēlonis: neass asmens, pārāk zema pļaušana vai pārāk daudz nogriezts vienā reizē.", "Uzasiniet asmeni.|Ievērojiet vienas trešdaļas principu.|Atjaunošanās laikā pļaujiet augstāk."], ["Brūnas vai dzeltenas svītras pēc mēslošanas", "Iespējamais cēlonis: mēslojuma apdegums vai pārklājošās joslas.", "Ja etiķete atļauj, labi salaistiet skarto vietu.|Nepievienojiet vairāk mēslojuma.|Nākamreiz kalibrējiet izkliedētāju un devu sadaliet divos krusteniskos gājienos."], ["Mazi kaili plankumi ar tumšāku zāli apkārt", "Iespējamais cēlonis: koncentrēts urīns, sāļi vai ķīmiskas vielas.", "Ātri izskalojiet ar ūdeni.|Ja nepieciešams, izņemiet stipri bojāto velēnu un pārsējiet."], ["Neregulāri plankumi, kas palielinās mitrā laikā", "Iespējamais cēlonis: sēnīšu slimība.", "Laistiet no rīta, ne vēlu vakarā.|Uzlabojiet gaisa cirkulāciju un izvairieties no pārmērīga slāpekļa.|Samaziniet ilgstošu lapu mitrumu."], ["Rets zāliens zem kokiem vai pie žoga", "Iespējamais cēlonis: ēna un konkurence par ūdeni un barības vielām.", "Izmantojiet ēnai piemērotu maisījumu ar auzenēm.|Ja iespējams, uzlabojiet gaismu un gaisa plūsmu.|Pļaujiet nedaudz augstāk."], ["Kailas takas intensīvas staigāšanas vietās", "Iespējamais cēlonis: augsnes sablīvējums un nodilums.", "Aerējiet sablīvētu augsni.|Pārsējiet ar nodilumizturīgu maisījumu.|Samaziniet slodzi līdz jaunā zāle iesakņojas."], ["Zāle viegli izraujas vai iet bojā pat pēc laistīšanas", "Iespējamais cēlonis: sekla sakņošanās, sakņu bojājumi, stiprs sablīvējums vai slikta augsne.", "Pārbaudiet sakņu attīstību.|Novērtējiet sablīvējumu un drenāžu.|Ja sakņu zona ir slikta, atjaunojiet vietu."]], "calendar_lists": [["Pēc ziemas savāciet gružus, kad augsne apžuvusi.", "Grābiet tikai tad, kad velēna ir pietiekami stingra.", "Atjaunojiet ziemas bojājumus un kailās vietas.", "Pavasara mēslojumu lietojiet pēc aktīvas augšanas sākuma.", "Sāciet regulāri pļaut ar asu asmeni."], ["Sausumā laistiet pamatīgi.", "Karstumā pļaujiet augstāk.", "Sausuma laikā izvairieties no lielām slāpekļa devām.", "Vērojiet slimības, sausos plankumus un sablīvējumu.", "Asmeņiem jābūt asiem."], ["Labs laiks pārsēšanai un remontam.", "Ja vajag, aerējiet sablīvētas vietas.", "Lietojiet rudenim piemērotu mēslojumu.", "Regulāri savāciet lapas.", "Augšanai palēninoties, pakāpeniski samaziniet pļaušanas biežumu."], ["Izvairieties no staigāšanas pa sasalušu vai pārmitru zālienu.", "Nemēslojiet sasalušu augsni.", "Apkopiet pļāvēju un izkliedētāju.", "Plānojiet pavasara remontus un sēklu iegādi.", "Pēc atkušņa pārbaudiet drenāžas problēmas."]]}, "pl": {"fert_rows": [["Wczesna wiosna", "Cel: wznowienie wzrostu", "Gdy trawnik zacznie aktywnie rosnąć, zastosuj wiosenny nawóz z umiarkowaną lub wyższą zawartością azotu. Nie nawoź zamarzniętej ani podmokłej gleby.", "Typowe podejście", "Wybierz nawóz NPK, w którym azot (N) jest dominującym składnikiem. Stosuj dawkę z etykiety."], ["Późna wiosna", "Cel: gęstość i kolor", "Zrównoważony nawóz wspiera wzrost liści i regenerację po wiosennym użytkowaniu.", "Typowe podejście", "Umiarkowany azot z potasem. Fosfor jest szczególnie przydatny przy zakładaniu trawnika lub gdy badanie gleby wskazuje niedobór."], ["Lato", "Cel: ograniczyć stres", "Podczas upałów i suszy zmniejsz lub odłóż nawożenie azotowe.", "Typowe podejście", "Jeżeli trawnik jest nawadniany i aktywnie rośnie, zastosuj lżejszą dawkę. W przeciwnym razie poczekaj na chłodniejsze i wilgotniejsze warunki."], ["Wczesna jesień", "Cel: regeneracja i korzenie", "Jesień to ważny okres nawożenia traw chłodnego klimatu, zwłaszcza po stresie letnim lub dosiewaniu.", "Typowe podejście", "Stosuj nawóz zawierający azot i potas. Potas wspiera odporność na stres."], ["Późna jesień", "Cel: przygotowanie do zimy", "Stosuj wyłącznie produkty przeznaczone do jesiennego/zimowego nawożenia i tylko gdy trawnik pozostaje aktywny.", "Typowe podejście", "Często mniej azotu i więcej potasu. Unikaj nadmiernego późnego, miękkiego wzrostu."]], "problems": [["Równomierne brązowienie podczas upału i suszy", "Prawdopodobna przyczyna: stres suszy lub przejściowy letni spoczynek.", "Dojrzały trawnik podlewaj rzadziej, ale głęboko.|Podlewaj wcześnie rano.|Podnieś wysokość koszenia w czasie upałów.|Nie stosuj mocnego nawozu azotowego na suchy, zestresowany trawnik."], ["Brązowe końcówki tuż po koszeniu", "Prawdopodobna przyczyna: tępy nóż, zbyt niskie koszenie lub usunięcie zbyt dużej części źdźbła.", "Naostrz nóż.|Stosuj zasadę jednej trzeciej.|Na czas regeneracji zwiększ wysokość koszenia."], ["Brązowe lub żółte pasy po nawożeniu", "Prawdopodobna przyczyna: przypalenie nawozem lub nakładanie się przejazdów rozsiewacza.", "Jeśli etykieta na to pozwala, obficie podlej uszkodzone miejsce.|Nie dodawaj więcej nawozu.|Następnym razem skalibruj rozsiewacz i podziel dawkę na dwa przejazdy krzyżowe."], ["Małe martwe plamy otoczone ciemniejszą zielenią", "Prawdopodobna przyczyna: skoncentrowany mocz, sól lub środki chemiczne.", "Szybko przepłucz miejsce wodą.|W razie potrzeby usuń mocno uszkodzoną darń i dosiej."], ["Nieregularne plamy powiększające się przy wilgotnej pogodzie", "Możliwa przyczyna: choroba grzybowa.", "Podlewaj rano, nie późnym wieczorem.|Popraw przewiew i unikaj nadmiaru azotu.|Ogranicz długotrwałe zwilżenie liści."], ["Rzadka trawa pod drzewami lub przy ogrodzeniu", "Prawdopodobna przyczyna: cień i konkurencja o wodę oraz składniki pokarmowe.", "Stosuj mieszankę do cienia z kostrzewami.|W razie możliwości popraw dostęp światła i przewiew.|Koś nieco wyżej."], ["Łyse ścieżki w miejscach częstego chodzenia", "Prawdopodobna przyczyna: ubicie gleby i zużycie.", "Napowietrz zbitą glebę.|Dosiej mieszanką odporną na użytkowanie.|Ogranicz ruch, aż nowa trawa się ukorzeni."], ["Trawa łatwo się wyrywa lub zamiera mimo podlewania", "Możliwa przyczyna: płytkie korzenie, uszkodzenia korzeni, silne ubicie lub słaba gleba.", "Sprawdź rozwój korzeni.|Oceń zagęszczenie i drenaż.|Jeśli strefa korzeniowa jest słaba, miejscowo ją odnowić."]], "calendar_lists": [["Po zimie usuń zanieczyszczenia, gdy gleba obeschnie.", "Grab tylko wtedy, gdy darń jest wystarczająco stabilna.", "Napraw uszkodzenia zimowe i puste miejsca.", "Zastosuj nawóz wiosenny po rozpoczęciu aktywnego wzrostu.", "Rozpocznij regularne koszenie ostrym nożem."], ["Podczas suszy podlewaj głęboko.", "W czasie upałów podnieś wysokość koszenia.", "Unikaj dużych dawek azotu podczas suszy.", "Kontroluj choroby, suche plamy i ubicie.", "Utrzymuj noże ostre."], ["Bardzo dobry czas na dosiew i naprawy.", "W razie potrzeby napowietrz zbitą glebę.", "Stosuj nawóz odpowiedni na jesień.", "Regularnie usuwaj liście.", "Gdy wzrost zwalnia, stopniowo zmniejsz częstotliwość koszenia."], ["Unikaj chodzenia po zamarzniętej lub podmokłej murawie.", "Nie nawoź zamarzniętej gleby.", "Serwisuj kosiarkę i rozsiewacz.", "Zaplanuj wiosenne naprawy i zakup nasion.", "Po odwilży sprawdź problemy z drenażem."]]}, "et": {"fert_rows": [["Varakevad", "Eesmärk: käivitada kasv", "Kui muru hakkab aktiivselt kasvama, kasuta kevadväetist mõõduka või suurema lämmastikusisaldusega. Ära väeta külmunud ega vettinud mulda.", "Tüüpiline lähenemine", "Vali NPK-väetis, kus lämmastik (N) on peamine toitaine. Järgi pakendi normi."], ["Hiliskevad", "Eesmärk: tihedus ja värv", "Tasakaalustatud muruväetis toetab lehekasvu ja taastumist kevadisest koormusest.", "Tüüpiline lähenemine", "Mõõdukas lämmastik koos kaaliumiga. Fosfor on eriti kasulik rajamisel või kui mullaanalüüs näitab puudust."], ["Suvi", "Eesmärk: vältida stressi", "Kuuma ja kuiva ilmaga vähenda või lükka lämmastikväetamine edasi.", "Tüüpiline lähenemine", "Kui muru on kastetud ja kasvab aktiivselt, kasuta väiksemat doosi. Muul juhul oota jahedamat ja niiskemat ilma."], ["Varasügis", "Eesmärk: taastumine ja juured", "Sügis on jaheda kliima murule oluline väetamisperiood, eriti pärast suvist stressi või järelkülvi.", "Tüüpiline lähenemine", "Kasuta lämmastikku ja kaaliumi sisaldavat muruväetist. Kaalium aitab suurendada stressitaluvust."], ["Hilissügis", "Eesmärk: talveks valmistumine", "Kasuta ainult sügis-/talveväetisi ja ainult seni, kuni muru on veel füsioloogiliselt aktiivne.", "Tüüpiline lähenemine", "Sageli vähem lämmastikku ja rohkem kaaliumi. Väldi hilist pehmet kasvu."]], "problems": [["Ühtlane pruunistumine kuuma ja kuiva ilmaga", "Tõenäoline põhjus: põuastress või ajutine suvine puhkeolek.", "Juurdunud muru kasta harvem, kuid sügavamalt.|Kasta varahommikul.|Tõsta kuumaga niitmiskõrgust.|Ära väeta kuiva stressis muru tugeva lämmastikväetisega."], ["Pruunid tipud kohe pärast niitmist", "Tõenäoline põhjus: nüri tera, liiga madal niitmine või liiga suure osa eemaldamine korraga.", "Terita tera.|Järgi ühe kolmandiku reeglit.|Taastumise ajal tõsta niitmiskõrgust."], ["Pruunid või kollased triibud pärast väetamist", "Tõenäoline põhjus: väetisekahjustus või kattuvad laoturikäigud.", "Kui etikett lubab, kasta kahjustatud ala põhjalikult.|Ära lisa rohkem väetist.|Järgmisel korral kalibreeri laotur ja jaga kogus kaheks ristuvaks käiguks."], ["Väikesed surnud laigud tumerohelise servaga", "Tõenäoline põhjus: kontsentreeritud uriin, sool või keemiline kahjustus.", "Loputa ala kiiresti rohke veega.|Vajadusel eemalda tugevalt kahjustatud kamar ja külva uuesti."], ["Niiske ilmaga suurenevad ebakorrapärased laigud", "Võimalik põhjus: seenhaigus.", "Kasta hommikul, mitte hilisõhtul.|Paranda õhuringlust ja väldi liigset lämmastikku.|Vähenda pikaajalist lehtede märjana püsimist."], ["Hõre muru puude all või aia ääres", "Tõenäoline põhjus: vari ja konkurents vee ning toitainete pärast.", "Kasuta varjutaluvat segu aruheinadega.|Võimalusel paranda valguse ja õhu juurdepääsu.|Niida veidi kõrgemalt."], ["Paljad rajad sagedase käimise kohtades", "Tõenäoline põhjus: mulla tihenemine ja kulumine.", "Õhuta tihenenud mulda.|Järelkülva kulumiskindla seguga.|Piira koormust kuni uus muru juurdub."], ["Muru tuleb kergesti üles või sureb hoolimata kastmisest", "Võimalik põhjus: pinnapealne juurdumine, juurekahjustus, tugev tihenemine või halb muld.", "Kontrolli juurte arengut.|Hinda mulla tihenemist ja drenaaži.|Kui juureala on halb, renoveeri koht."]], "calendar_lists": [["Pärast talve eemalda praht, kui muld on kuivanud.", "Rehake ainult siis, kui kamar on piisavalt tugev.", "Paranda talvekahjustused ja paljad kohad.", "Kasuta kevadväetist pärast aktiivse kasvu algust.", "Alusta regulaarset niitmist terava teraga."], ["Põuaga kasta sügavalt.", "Kuumaga tõsta niitmiskõrgust.", "Väldi põua ajal suuri lämmastikukoguseid.", "Jälgi haigusi, kuivi laike ja tihenemist.", "Hoia terad teravana."], ["Väga hea aeg järelkülviks ja parandusteks.", "Vajadusel õhuta tihenenud alasid.", "Kasuta sügiseks sobivat väetist.", "Eemalda lehti regulaarselt.", "Kasvu aeglustudes vähenda järk-järgult niitmissagedust."], ["Väldi liiklust külmunud või vettinud murul.", "Ära väeta külmunud mulda.", "Hoolda niidukit ja laoturit.", "Planeeri kevadised parandused ja seemneost.", "Pärast sula kontrolli drenaažiprobleeme."]]}, "de": {"fert_rows": [["Frühes Frühjahr", "Ziel: Wachstum wieder anregen", "Sobald der Rasen aktiv wächst, einen Frühjahrsdünger mit mittlerem bis höherem Stickstoffanteil verwenden. Nicht auf gefrorenem oder vernässtem Boden düngen.", "Typischer Ansatz", "Ein NPK-Produkt wählen, bei dem Stickstoff (N) der Hauptnährstoff ist. Aufwandmenge laut Etikett einhalten."], ["Spätes Frühjahr", "Ziel: Dichte und Farbe", "Ein ausgewogener Rasendünger unterstützt Blattwachstum und Erholung nach Frühjahrsbelastung.", "Typischer Ansatz", "Mäßiger Stickstoffanteil mit Kalium. Phosphor ist besonders bei Neuanlage oder nachgewiesenem Mangel sinnvoll."], ["Sommer", "Ziel: Stress vermeiden", "Bei Hitze und Trockenheit Stickstoffdüngung reduzieren oder verschieben.", "Typischer Ansatz", "Wenn der Rasen bewässert wird und aktiv wächst, eine leichtere Gabe verwenden. Sonst auf kühlere und feuchtere Bedingungen warten."], ["Früher Herbst", "Ziel: Erholung und Wurzelstärkung", "Der Herbst ist für Rasen in kühlem Klima eine wichtige Düngezeit, besonders nach Sommerstress oder Nachsaat.", "Typischer Ansatz", "Rasendünger mit Stickstoff und Kalium verwenden. Kalium unterstützt Stressresistenz."], ["Später Herbst", "Ziel: Wintervorbereitung", "Nur Produkte für Herbst-/Winterdüngung einsetzen und nur solange der Rasen noch aktiv ist.", "Typischer Ansatz", "Typisch sind weniger Stickstoff und mehr Kalium. Übermäßiges spätes weiches Wachstum vermeiden."]], "problems": [["Gleichmäßige Braunfärbung bei Hitze und Trockenheit", "Wahrscheinliche Ursache: Trockenstress oder vorübergehende Sommerruhe.", "Etablierten Rasen seltener, aber tiefgründig wässern.|Früh morgens wässern.|Bei Hitze höher mähen.|Trockenen, gestressten Rasen nicht stark stickstoffbetont düngen."], ["Braune Spitzen direkt nach dem Mähen", "Wahrscheinliche Ursache: stumpfes Messer, zu niedriger Schnitt oder zu viel Blattmasse auf einmal entfernt.", "Messer schärfen.|Ein-Drittel-Regel beachten.|Während der Erholung höher mähen."], ["Braune oder gelbe Streifen nach dem Düngen", "Wahrscheinliche Ursache: Düngerverbrennung oder überlappende Streubahnen.", "Wenn laut Etikett zulässig, betroffene Fläche gründlich wässern.|Keinen weiteren Dünger ausbringen.|Beim nächsten Mal Streuer kalibrieren und die Menge auf zwei Kreuzgänge aufteilen."], ["Kleine tote Flecken mit dunklerem Grün außen herum", "Wahrscheinliche Ursache: konzentrierter Urin, Salz oder chemische Schäden.", "Bereich schnell mit viel Wasser spülen.|Stark geschädigte Grasnarbe bei Bedarf entfernen und nachsäen."], ["Unregelmäßige Flecken, die sich bei feuchtem Wetter vergrößern", "Mögliche Ursache: Pilzkrankheit.", "Morgens statt spät abends wässern.|Luftzirkulation verbessern und übermäßigen Stickstoff vermeiden.|Lange Blattnässe reduzieren."], ["Dünner Rasen unter Bäumen oder an Zäunen", "Wahrscheinliche Ursache: Schatten sowie Konkurrenz um Wasser und Nährstoffe.", "Schattenmischung mit Schwingelarten verwenden.|Wo möglich Licht und Luftzirkulation verbessern.|Etwas höher mähen."], ["Kahle Wege an häufig begangenen Stellen", "Wahrscheinliche Ursache: Bodenverdichtung und Abnutzung.", "Verdichteten Boden aerifizieren.|Mit belastbarer Mischung nachsäen.|Belastung reduzieren, bis der neue Rasen verwurzelt ist."], ["Gras lässt sich leicht herausziehen oder stirbt trotz Bewässerung", "Mögliche Ursache: flache Wurzeln, Wurzelschäden, starke Verdichtung oder ungeeigneter Boden.", "Wurzelentwicklung prüfen.|Verdichtung und Entwässerung kontrollieren.|Schlechte Wurzelzone lokal sanieren."]], "calendar_lists": [["Nach dem Winter Rückstände entfernen, sobald der Boden abgetrocknet ist.", "Nur harken, wenn die Grasnarbe ausreichend fest ist.", "Winterschäden und kahle Stellen reparieren.", "Frühjahrsdünger nach Beginn des aktiven Wachstums ausbringen.", "Regelmäßig mit scharfem Messer mähen."], ["Bei Trockenheit tiefgründig wässern.", "Bei Hitze höher mähen.", "Während Dürre starke Stickstoffgaben vermeiden.", "Auf Krankheiten, Trockenstellen und Verdichtung achten.", "Messer scharf halten."], ["Sehr gute Zeit für Nachsaat und Reparaturen.", "Bei Bedarf verdichtete Bereiche aerifizieren.", "Herbstgeeigneten Dünger verwenden.", "Laub regelmäßig entfernen.", "Bei nachlassendem Wachstum die Mähhäufigkeit allmählich reduzieren."], ["Gefrorenen oder vernässten Rasen möglichst nicht betreten.", "Gefrorenen Boden nicht düngen.", "Mäher und Streuer warten.", "Frühjahrsreparaturen und Saatgutbedarf planen.", "Nach Tauwetter Entwässerungsprobleme prüfen."]]}};
+const extraTranslations = {"en": {"title": "GREEN — Complete Lawn Growing Guide", "tags": ["Fast", "Wear tolerant", "Frequent mowing", "Dense", "Self-repairing", "Slower start", "Fine texture", "Shade", "Low maintenance", "Drought tolerant", "Deep roots", "Robust", "Low input", "Shade tolerant", "Slow growth"], "mix_headers": ["Mixture type", "Typical composition idea", "Best use", "Main strengths", "What to watch for"], "mix_rows": [["Quick establishment", "High proportion of perennial ryegrass, often mixed with red fescue and/or Kentucky bluegrass", "Fast results, repairs, new lawns when speed matters", "Rapid germination and quick green cover", "Usually needs more mowing and may be less refined than slow decorative mixtures"], ["Family / universal lawn", "Balanced perennial ryegrass + red fescue + Kentucky bluegrass", "Home gardens, children, pets, normal walking", "Good balance of appearance, durability and recovery", "Needs regular mowing and feeding for best density"], ["Sports / high traffic", "High perennial ryegrass with Kentucky bluegrass; sometimes robust fescues", "Play areas, training zones, high wear", "Strong wear tolerance and recovery", "Needs more water, nutrients and mowing under intensive use"], ["Decorative / fine lawn", "Higher fine-fescue content, sometimes Kentucky bluegrass; lower ryegrass", "Front gardens, visual appearance, lighter traffic", "Fine texture, dense refined look", "Less suitable for constant heavy use"], ["Shade-tolerant lawn", "Fine fescues + red fescue, sometimes shade-tolerant bluegrass types", "Near trees, fences, north-facing areas", "Better persistence with less direct sun", "Even shade mixtures still need some light; dense tree roots may compete for water"], ["Low-maintenance / slow-growing", "Higher share of fine fescues, hard fescue or sheep fescue", "Areas where less mowing and lower fertilization are priorities", "Slower growth and lower input requirement", "Slower repair after heavy wear"], ["Dry / drought-prone site", "Tall fescue dominant or mixed with drought-tolerant fine fescues", "Sunny areas, sandy soil, limited irrigation", "Deep rooting and better heat tolerance", "Leaf texture can be coarser than decorative mixtures"]], "grass_note": "Important: mixture percentages differ by brand and cultivar. Read the species list on the bag instead of relying only on labels such as “sport”, “premium” or “universal”.", "nutrients": [["Nitrogen", "Drives green leaf growth and colour. Too much can produce weak, soft growth, increase mowing demand and raise disease risk."], ["Phosphorus", "Important for root development, especially during establishment. Mature lawns often need less unless a soil test shows deficiency."], ["Potassium", "Supports stress tolerance, water regulation and winter hardiness. Often emphasized in autumn fertilizers."]], "fert_warning": "Never fertilize by guesswork. Use the product label rate, spread evenly, avoid overlap, and keep granules off paving. If the lawn is severely drought-stressed, wait until it recovers before applying strong nitrogen fertilizer.", "problem_warning": "Do not automatically treat every brown patch with fertilizer. Fertilizer can worsen drought stress, salt damage and some disease problems. Diagnose first, then act.", "journey_steps": ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5", "Step 6"], "journey_desc": ["Ground is cleared, levelled and lightly firmed before seed is applied.", "A gentle spray keeps the top layer moist without washing seed into piles.", "Fine green shoots begin to cover the soil. Moisture remains critical at this stage.", "The lawn becomes denser as roots deepen and individual plants begin to tiller.", "Bare spots are loosened, reseeded and kept moist until new seedlings establish.", "The first cut is gentle and removes only the top portion of the leaf."]}, "lt": {"title": "GREEN — išsamus vejos auginimo gidas", "tags": ["Greitai dygsta", "Atspari mindymui", "Dažnesnis pjovimas", "Tanki", "Gerai atsistato", "Lėtesnė pradžia", "Smulki tekstūra", "Pavėsis", "Mažai priežiūros", "Atspari sausrai", "Gilios šaknys", "Tvirta", "Mažas poreikis", "Toleruoja pavėsį", "Lėtas augimas"], "mix_headers": ["Mišinio tipas", "Tipinė sudėtis", "Kam geriausiai tinka", "Pagrindiniai privalumai", "Į ką atkreipti dėmesį"], "mix_rows": [["Greitam įrengimui", "Daug daugiametės svidrės, dažnai su raudonuoju eraičinu ir (ar) pievine migle", "Greitam rezultatui, remontui, naujai vejai", "Greitas dygimas ir greitas žalios dangos susiformavimas", "Dažniausiai reikia dažniau pjauti; gali būti mažiau dekoratyvi nei lėtai augantys mišiniai"], ["Šeimos / universali veja", "Subalansuotas daugiametės svidrės, raudonojo eraičino ir pievinės miglės mišinys", "Namų kiemams, vaikams, augintiniams, įprastam vaikščiojimui", "Geras išvaizdos, patvarumo ir atsistatymo balansas", "Didžiausiam tankumui reikia reguliaraus pjovimo ir tręšimo"], ["Sportinė / intensyviam naudojimui", "Daug svidrės ir pievinės miglės, kartais tvirtesni eraičinai", "Žaidimų zonoms, treniruotėms, intensyviam mindymui", "Aukštas atsparumas mindymui ir geras atsistatymas", "Intensyviai naudojant reikia daugiau vandens, maisto medžiagų ir pjovimo"], ["Dekoratyvinė / smulkialapė", "Didesnė smulkialapių eraičinų dalis, kartais pievinė miglė, mažiau svidrės", "Priekiniams kiemams, gražiai išvaizdai, mažesnei apkrovai", "Smulki tekstūra ir tanki, tvarkinga išvaizda", "Mažiau tinkama nuolatiniam intensyviam naudojimui"], ["Pavėsiui", "Smulkialapiai ir raudonieji eraičinai, kartais pavėsį toleruojanti pievinė miglė", "Prie medžių, tvorų, šiaurinėse pusėse", "Geriau išsilaiko esant mažiau tiesioginės saulės", "Net pavėsio mišiniams reikia šviesos; medžių šaknys konkuruoja dėl vandens"], ["Mažai priežiūros / lėtai auganti", "Daug smulkialapių, kietųjų ar avinių eraičinų", "Plotams, kur norima rečiau pjauti ir mažiau tręšti", "Lėtesnis augimas ir mažesnis priežiūros poreikis", "Po stipraus mindymo atsistato lėčiau"], ["Sausai / sausrai jautriai vietai", "Vyrauja aukštasis eraičinas arba jis maišomas su sausrai atsparesniais smulkialapiais eraičinais", "Saulėtoms vietoms, smėlingai dirvai, ribotam laistymui", "Gilus įsišaknijimas ir didesnis atsparumas karščiui", "Lapų tekstūra gali būti stambesnė nei dekoratyvinių mišinių"]], "grass_note": "Svarbu: mišinių procentinė sudėtis priklauso nuo gamintojo ir veislių. Vertinkite ant pakuotės nurodytas žolių rūšis, o ne vien pavadinimus „sport“, „premium“ ar „universal“.", "nutrients": [["Azotas", "Skatina žalios lapų masės augimą ir spalvą. Perteklius gali lemti silpną, minkštą augimą, dažnesnį pjovimą ir didesnę ligų riziką."], ["Fosforas", "Svarbus šaknų vystymuisi, ypač įrengiant veją. Brandžiai vejai jo dažnai reikia mažiau, nebent trūkumą rodo dirvožemio tyrimas."], ["Kalis", "Padeda atsparumui stresui, vandens reguliavimui ir žiemojimui. Dažnai jo daugiau būna rudeninėse trąšose."]], "fert_warning": "Netręškite „iš akies“. Laikykitės etiketės normos, trąšas paskirstykite tolygiai, venkite persidengimų ir granulių ant trinkelių. Jei veja stipriai nualinta sausros, su stipriomis azotinėmis trąšomis palaukite, kol ji atsigaus.", "problem_warning": "Ne kiekvieną rudą dėmę reikia gydyti trąšomis. Trąšos gali pabloginti sausros, druskų ar kai kurių ligų sukeltą būklę. Pirmiausia nustatykite priežastį.", "journey_steps": ["1 etapas", "2 etapas", "3 etapas", "4 etapas", "5 etapas", "6 etapas"], "journey_desc": ["Plotas išvalytas, išlygintas ir lengvai sutvirtintas prieš sėją.", "Švelni vandens srovė palaiko drėgną paviršių ir nenuplauna sėklų.", "Dirvos paviršiuje pasirodo pirmieji žali daigeliai. Šiuo metu ypač svarbi drėgmė.", "Šaknims gilėjant ir augalams šakojantis veja tampa vis tankesnė.", "Plikos vietos supurenamos, atsėjamos ir laikomos drėgnos, kol sudygsta nauja žolė.", "Pirmasis pjovimas atliekamas švelniai, nupjaunant tik viršutinę lapų dalį."]}, "lv": {"title": "GREEN — pilnīgs zāliena audzēšanas ceļvedis", "tags": ["Ātri dīgst", "Izturīga pret slodzi", "Biežāka pļaušana", "Blīva", "Labi atjaunojas", "Lēnāks sākums", "Smalka tekstūra", "Ēna", "Maz kopšanas", "Sausumizturīga", "Dziļas saknes", "Izturīga", "Mazs patēriņš", "Iztur ēnu", "Lēna augšana"], "mix_headers": ["Maisījuma veids", "Tipiska sastāva ideja", "Piemērotākais lietojums", "Galvenās priekšrocības", "Kam pievērst uzmanību"], "mix_rows": [["Ātrai ierīkošanai", "Liels daudzgadīgās airenes īpatsvars, bieži kopā ar sarkano auzeni un/vai pļavas skareni", "Ātram rezultātam, remontam un jaunam zālienam", "Ātra dīgšana un ātra zaļā seguma izveide", "Parasti jāpļauj biežāk; var būt mazāk smalks nekā lēni augoši dekoratīvie maisījumi"], ["Ģimenes / universāls", "Sabalansēta daudzgadīgā airene + sarkanā auzene + pļavas skarene", "Mājas dārziem, bērniem, mājdzīvniekiem un parastai staigāšanai", "Labs izskata, izturības un atjaunošanās līdzsvars", "Maksimālam blīvumam vajag regulāru pļaušanu un mēslošanu"], ["Sporta / lielai slodzei", "Daudz airenes ar pļavas skareni; reizēm izturīgas auzenes", "Spēļu zonām, treniņiem un intensīvai slodzei", "Augsta nodilumizturība un laba atjaunošanās", "Intensīvā lietošanā vajag vairāk ūdens, barības vielu un pļaušanas"], ["Dekoratīvs / smalks", "Vairāk smalklapu auzeņu, reizēm pļavas skarene; mazāk airenes", "Priekšdārziem, vizuālam efektam un nelielai slodzei", "Smalka tekstūra un blīvs, koptas virsmas izskats", "Mazāk piemērots pastāvīgai intensīvai slodzei"], ["Ēnai", "Smalklapu un sarkanās auzenes, reizēm ēnu izturīgas skarenes", "Pie kokiem, žogiem, ziemeļu pusē", "Labāk saglabājas ar mazāk tiešas saules", "Arī ēnas maisījumam vajag gaismu; koku saknes konkurē par ūdeni"], ["Maz kopšanas / lēni augošs", "Lielāks smalklapu, cietās vai aitu auzenes īpatsvars", "Vietām, kur prioritāte ir retāka pļaušana un mazāka mēslošana", "Lēnāka augšana un mazāks kopšanas patēriņš", "Pēc lielas slodzes atjaunojas lēnāk"], ["Sausai vietai", "Dominē niedru auzene vai maisījums ar sausumizturīgām smalklapu auzenēm", "Saulainām vietām, smilšainai augsnei un ierobežotai laistīšanai", "Dziļas saknes un labāka karstuma izturība", "Lapu tekstūra var būt rupjāka nekā dekoratīviem maisījumiem"]], "grass_note": "Svarīgi: maisījumu procenti atšķiras pēc zīmola un šķirnes. Lasiet sugu sarakstu uz iepakojuma, nevis paļaujieties tikai uz nosaukumiem “sport”, “premium” vai “universal”.", "nutrients": [["Slāpeklis", "Veicina zaļās lapu masas augšanu un krāsu. Pārāk daudz var radīt vāju, mīkstu augšanu, biežāku pļaušanu un lielāku slimību risku."], ["Fosfors", "Svarīgs sakņu attīstībai, īpaši ierīkošanas laikā. Nobriedušam zālienam bieži vajag mazāk, ja vien augsnes analīze nerāda trūkumu."], ["Kālijs", "Palīdz stresa izturībai, ūdens regulācijai un ziemcietībai. Bieži uzsvērts rudens mēslojumos."]], "fert_warning": "Nemēslojiet pēc izjūtas. Ievērojiet etiķetes normu, izkliedējiet vienmērīgi, izvairieties no pārklāšanās un neatstājiet granulas uz bruģa. Pēc stipra sausuma pagaidiet, līdz zāliens atkopjas.", "problem_warning": "Ne katrs brūns plankums jāārstē ar mēslojumu. Tas var pasliktināt sausuma, sāļu un dažu slimību radīto stresu. Vispirms nosakiet cēloni.", "journey_steps": ["1. posms", "2. posms", "3. posms", "4. posms", "5. posms", "6. posms"], "journey_desc": ["Laukums ir notīrīts, izlīdzināts un viegli nostiprināts pirms sēšanas.", "Maiga ūdens strūkla uztur virskārtu mitru, neizskalojot sēklas.", "Parādās pirmie zaļie dīgsti; šajā posmā mitrums ir īpaši svarīgs.", "Saknēm attīstoties un augiem cerojot, zāliens kļūst arvien blīvāks.", "Kailās vietas uzirdina, pārsēj un uztur mitras līdz jaunās zāles sadīgšanai.", "Pirmā pļaušana ir saudzīga un noņem tikai lapu augšējo daļu."]}, "pl": {"title": "GREEN — kompletny poradnik zakładania trawnika", "tags": ["Szybkie kiełkowanie", "Odporna na użytkowanie", "Częstsze koszenie", "Gęsta", "Dobrze się regeneruje", "Wolniejszy start", "Delikatna struktura", "Cień", "Mało pielęgnacji", "Odporna na suszę", "Głębokie korzenie", "Wytrzymała", "Niskie wymagania", "Toleruje cień", "Wolny wzrost"], "mix_headers": ["Rodzaj mieszanki", "Typowy skład", "Najlepsze zastosowanie", "Główne zalety", "Na co uważać"], "mix_rows": [["Szybkie zakładanie", "Duży udział życicy trwałej, często z kostrzewą czerwoną i/lub wiechliną łąkową", "Szybki efekt, naprawy i nowe trawniki", "Szybkie kiełkowanie i szybkie zazielenienie", "Zwykle wymaga częstszego koszenia i może być mniej subtelna od wolnych mieszanek dekoracyjnych"], ["Rodzinny / uniwersalny", "Zbilansowana życica trwała + kostrzewa czerwona + wiechlina łąkowa", "Ogrody przydomowe, dzieci, zwierzęta, normalne chodzenie", "Dobry balans wyglądu, trwałości i regeneracji", "Dla najwyższej gęstości wymaga regularnego koszenia i nawożenia"], ["Sportowy / intensywne użytkowanie", "Dużo życicy trwałej z wiechliną łąkową; czasem mocne kostrzewy", "Place zabaw, trening, intensywne użytkowanie", "Duża odporność na zużycie i dobra regeneracja", "Przy intensywnym użytkowaniu potrzebuje więcej wody, składników i koszenia"], ["Dekoracyjny / drobnolistny", "Więcej drobnolistnych kostrzew, czasem wiechlina; mniej życicy", "Przedogródki, efekt wizualny, mniejszy ruch", "Delikatna struktura i gęsty elegancki wygląd", "Mniej odpowiedni do stałego intensywnego użytkowania"], ["Do cienia", "Kostrzewy drobnolistne + kostrzewa czerwona, czasem cienioznośna wiechlina", "Przy drzewach, ogrodzeniach i po stronie północnej", "Lepsza trwałość przy mniejszej ilości słońca", "Nawet mieszanki do cienia potrzebują światła; korzenie drzew konkurują o wodę"], ["Mało wymagający / wolno rosnący", "Większy udział kostrzew drobnolistnych, twardej lub owczej", "Tam, gdzie priorytetem jest rzadsze koszenie i mniej nawozu", "Wolniejszy wzrost i mniejsze wymagania", "Wolniejsza regeneracja po intensywnym użytkowaniu"], ["Suchy / narażony na suszę", "Dominuje kostrzewa trzcinowa lub mieszanka z suszoodpornymi kostrzewami", "Słoneczne miejsca, gleba piaszczysta, ograniczone podlewanie", "Głębokie korzenie i większa odporność na upał", "Liście mogą być grubsze niż w mieszankach dekoracyjnych"]], "grass_note": "Ważne: procentowy skład mieszanek różni się zależnie od marki i odmiany. Czytaj listę gatunków na opakowaniu, zamiast opierać się wyłącznie na nazwach „sport”, „premium” czy „universal”.", "nutrients": [["Azot", "Napędza wzrost zielonych liści i kolor. Nadmiar może powodować słaby, miękki wzrost, częstsze koszenie i większe ryzyko chorób."], ["Fosfor", "Ważny dla rozwoju korzeni, szczególnie podczas zakładania trawnika. Dojrzały trawnik zwykle potrzebuje go mniej, chyba że badanie gleby wskazuje niedobór."], ["Potas", "Wspiera odporność na stres, gospodarkę wodną i zimotrwałość. Często jest zwiększony w nawozach jesiennych."]], "fert_warning": "Nie nawoź „na oko”. Stosuj dawkę z etykiety, rozsiewaj równomiernie, unikaj nakładania przejazdów i granulek na nawierzchni. Gdy trawnik jest mocno przesuszony, poczekaj z mocnym nawozem azotowym do regeneracji.", "problem_warning": "Nie każdą brązową plamę należy leczyć nawozem. Nawóz może pogorszyć skutki suszy, zasolenia i niektórych chorób. Najpierw ustal przyczynę.", "journey_steps": ["Etap 1", "Etap 2", "Etap 3", "Etap 4", "Etap 5", "Etap 6"], "journey_desc": ["Teren jest oczyszczony, wyrównany i lekko ustabilizowany przed siewem.", "Delikatne podlewanie utrzymuje wilgoć bez wypłukiwania nasion.", "Pojawiają się pierwsze zielone siewki; na tym etapie wilgoć jest szczególnie ważna.", "Wraz z pogłębianiem korzeni i krzewieniem się roślin trawnik staje się gęstszy.", "Puste miejsca są spulchniane, dosiewane i utrzymywane w wilgoci do wschodów.", "Pierwsze koszenie jest delikatne i usuwa tylko górną część źdźbeł."]}, "et": {"title": "GREEN — täielik murukasvatuse juhend", "tags": ["Kiire idanemine", "Kulumiskindel", "Sagedasem niitmine", "Tihe", "Taastub hästi", "Aeglasem algus", "Peen tekstuur", "Vari", "Vähene hooldus", "Põuakindel", "Sügavad juured", "Tugev", "Väike sisend", "Varjutaluv", "Aeglane kasv"], "mix_headers": ["Segu tüüp", "Tüüpiline koostis", "Parim kasutus", "Peamised tugevused", "Mida jälgida"], "mix_rows": [["Kiire rajamine", "Suur karjamaa raiheina osakaal, sageli koos punase aruheina ja/või aasnurmikaga", "Kiire tulemus, parandused ja uued murud", "Kiire idanemine ja kiire roheline kate", "Vajab tavaliselt sagedamat niitmist ja võib olla vähem peen kui aeglasem dekoratiivsegu"], ["Pere / universaalne", "Tasakaalus karjamaa raihein + punane aruhein + aasnurmikas", "Koduaed, lapsed, lemmikloomad ja tavapärane käimine", "Hea välimuse, vastupidavuse ja taastumise tasakaal", "Parima tiheduse jaoks vajab regulaarset niitmist ja väetamist"], ["Sport / suur koormus", "Palju raiheina koos aasnurmikaga; vahel tugevad aruheinasordid", "Mängualad, treening ja suur koormus", "Hea kulumiskindlus ja taastumine", "Intensiivsel kasutusel vajab rohkem vett, toitaineid ja niitmist"], ["Dekoratiivne / peen", "Rohkem peenelehelisi aruheinasegusid, vahel aasnurmikas; vähem raiheina", "Esiaed, ilus välimus, väiksem koormus", "Peen tekstuur ja tihe korrastatud ilme", "Vähem sobiv pidevaks tugevaks kasutuseks"], ["Varjutaluv", "Peenelehelised ja punased aruheinad, vahel varjutaluv nurmikas", "Puude, aedade ja põhjapoolsete alade lähedal", "Püsib paremini vähese otsese päikese korral", "Ka varjusegu vajab valgust; puujuured konkureerivad vee pärast"], ["Vähese hooldusega / aeglase kasvuga", "Suurem peeneleheliste, jäiga või lambaaruheina osakaal", "Alad, kus soovitakse harvem niita ja vähem väetada", "Aeglasem kasv ja väiksem hooldusvajadus", "Taastub pärast tugevat kulumist aeglasemalt"], ["Kuiv / põuaohtlik ala", "Domineerib roog-aruhein või segu põuakindlate peeneleheliste aruheinadega", "Päikeseline ala, liivane muld, piiratud kastmine", "Sügav juurestik ja parem kuumataluvus", "Lehetekstuur võib olla dekoratiivsegudest jämedam"]], "grass_note": "Oluline: segude protsendid erinevad tootja ja sordi järgi. Vaata pakendil olevat liikide loetelu, mitte ainult nimetusi „sport“, „premium“ või „universal“.", "nutrients": [["Lämmastik", "Soodustab rohelise lehemassi kasvu ja värvi. Liigne kogus võib tekitada nõrka pehmet kasvu, suurendada niitmisvajadust ja haigusriski."], ["Fosfor", "Oluline juurte arenguks, eriti rajamise ajal. Küps muru vajab seda sageli vähem, kui mullaanalüüs puudust ei näita."], ["Kaalium", "Toetab stressitaluvust, veerežiimi ja talvekindlust. Sageli on seda rohkem sügisväetistes."]], "fert_warning": "Ära väeta hinnangu järgi. Järgi pakendi normi, laota ühtlaselt, väldi kattumist ja hoia graanulid sillutiselt eemal. Tugeva põuastressi korral oota tugeva lämmastikväetisega kuni muru taastub.", "problem_warning": "Ära ravi iga pruuni laiku automaatselt väetisega. Väetis võib halvendada põua-, soola- ja mõne haiguse kahjustust. Selgita esmalt põhjus.", "journey_steps": ["1. etapp", "2. etapp", "3. etapp", "4. etapp", "5. etapp", "6. etapp"], "journey_desc": ["Ala on puhastatud, tasandatud ja enne külvi kergelt tihendatud.", "Õrn kastmine hoiab pealmise kihi niiskena ilma seemneid ära uhtumata.", "Ilmuvad esimesed rohelised tõusmed; selles etapis on niiskus eriti oluline.", "Juurte süvenedes ja taimede võrsudes muutub muru järjest tihedamaks.", "Paljad kohad kobestatakse, külvatakse üle ja hoitakse niiskena kuni uue muru tärkamiseni.", "Esimene niitmine on õrn ja eemaldab ainult lehe ülemise osa."]}, "de": {"title": "GREEN — vollständiger Rasenratgeber", "tags": ["Schnelle Keimung", "Belastbar", "Häufigeres Mähen", "Dicht", "Regeneriert gut", "Langsamer Start", "Feine Struktur", "Schatten", "Pflegearm", "Trockenheitsverträglich", "Tiefe Wurzeln", "Robust", "Geringer Aufwand", "Schattenverträglich", "Langsames Wachstum"], "mix_headers": ["Mischungstyp", "Typische Zusammensetzung", "Beste Verwendung", "Hauptvorteile", "Worauf achten"], "mix_rows": [["Schnelle Etablierung", "Hoher Anteil Deutsches Weidelgras, oft mit Rotschwingel und/oder Wiesenrispe", "Schnelle Ergebnisse, Reparaturen und Neuanlagen", "Schnelle Keimung und rascher grüner Bestand", "Meist häufiger zu mähen und etwas gröber als langsam wachsende Zierrasenmischungen"], ["Familien- / Universalrasen", "Ausgewogenes Deutsches Weidelgras + Rotschwingel + Wiesenrispe", "Hausgärten, Kinder, Haustiere und normale Nutzung", "Guter Ausgleich aus Optik, Belastbarkeit und Regeneration", "Für maximale Dichte regelmäßig mähen und düngen"], ["Sport / hohe Belastung", "Viel Weidelgras mit Wiesenrispe; teils robuste Schwingelarten", "Spielbereiche, Training und starke Beanspruchung", "Hohe Verschleißfestigkeit und gute Regeneration", "Bei intensiver Nutzung mehr Wasser, Nährstoffe und Mähen nötig"], ["Zier- / Feinrasen", "Höherer Anteil Feinschwingel, teils Wiesenrispe; weniger Weidelgras", "Vorgärten, hochwertige Optik, geringere Belastung", "Feine Struktur und dichtes gepflegtes Erscheinungsbild", "Weniger geeignet für dauerhaft starke Beanspruchung"], ["Schattenrasen", "Feinschwingel + Rotschwingel, teils schattenverträgliche Rispenarten", "Unter Bäumen, an Zäunen und Nordseiten", "Bessere Ausdauer bei weniger direkter Sonne", "Auch Schattenrasen braucht Licht; Baumwurzeln konkurrieren um Wasser"], ["Pflegearm / langsam wachsend", "Höherer Anteil Feinschwingel, Hart- oder Schafschwingel", "Flächen mit weniger Mähen und geringerem Düngebedarf", "Langsameres Wachstum und geringerer Pflegeaufwand", "Langsamere Erholung nach starker Belastung"], ["Trocken / dürregefährdet", "Rohrschwingel dominiert oder Mischung mit trockenheitsverträglichen Feinschwingeln", "Sonnige Flächen, sandiger Boden, begrenzte Bewässerung", "Tiefe Wurzeln und bessere Hitzetoleranz", "Blattstruktur kann gröber als bei Zierrasen sein"]], "grass_note": "Wichtig: Die Mischungsanteile unterscheiden sich je nach Marke und Sorte. Lesen Sie die Artenliste auf der Packung und verlassen Sie sich nicht nur auf Bezeichnungen wie „Sport“, „Premium“ oder „Universal“.", "nutrients": [["Stickstoff", "Fördert grünes Blattwachstum und Farbe. Zu viel kann weiches, schwaches Wachstum, höheren Mähaufwand und mehr Krankheitsrisiko verursachen."], ["Phosphor", "Wichtig für die Wurzelentwicklung, besonders bei der Neuanlage. Etablierter Rasen benötigt oft weniger, sofern kein Mangel nachgewiesen ist."], ["Kalium", "Unterstützt Stressresistenz, Wasserhaushalt und Winterhärte. In Herbstdüngern häufig stärker vertreten."]], "fert_warning": "Nicht nach Gefühl düngen. Aufwandmenge laut Etikett einhalten, gleichmäßig streuen, Überlappungen vermeiden und Granulat von Pflasterflächen fernhalten. Bei starkem Trockenstress mit kräftiger Stickstoffdüngung warten, bis sich der Rasen erholt hat.", "problem_warning": "Nicht jeden braunen Fleck automatisch mit Dünger behandeln. Dünger kann Trockenstress, Salzschäden und manche Krankheiten verschlimmern. Erst die Ursache klären.", "journey_steps": ["Schritt 1", "Schritt 2", "Schritt 3", "Schritt 4", "Schritt 5", "Schritt 6"], "journey_desc": ["Die Fläche ist gereinigt, eingeebnet und vor der Aussaat leicht gefestigt.", "Sanfte Bewässerung hält die Oberfläche feucht, ohne Saatgut wegzuspülen.", "Erste grüne Keimlinge erscheinen; jetzt ist gleichmäßige Feuchtigkeit besonders wichtig.", "Mit tiefer werdenden Wurzeln und zunehmender Bestockung wird der Rasen dichter.", "Kahle Stellen werden gelockert, nachgesät und bis zum Auflaufen feucht gehalten.", "Der erste Schnitt erfolgt schonend und entfernt nur den oberen Teil der Blätter."]}}
+
+function applyExtraTranslations(lang) {
+
+  const x = extraTranslations[lang] || extraTranslations.en;
+  document.title = x.title;
+
+  document.querySelectorAll('#grass-types .tag').forEach((el,i) => {
+    if (x.tags[i] !== undefined) el.textContent = x.tags[i];
+  });
+
+  const table = document.querySelector('#grass-types table');
+  if (table) {
+    table.querySelectorAll('thead th').forEach((el,i) => {
+      if (x.mix_headers[i] !== undefined) el.textContent = x.mix_headers[i];
+    });
+    table.querySelectorAll('tbody tr').forEach((tr,r) => {
+      tr.querySelectorAll('td').forEach((td,c) => {
+        if (x.mix_rows[r] && x.mix_rows[r][c] !== undefined) td.textContent = x.mix_rows[r][c];
+      });
+    });
+  }
+
+  const grassNote = document.querySelector('#grass-types .note');
+  if (grassNote) grassNote.textContent = x.grass_note;
+
+  document.querySelectorAll('#fertilizing .grid-3 .card').forEach((card,i) => {
+    if (!x.nutrients[i]) return;
+    const h = card.querySelector('h3');
+    const p = card.querySelector('p');
+    if (h) h.textContent = x.nutrients[i][0];
+    if (p) p.textContent = x.nutrients[i][1];
+  });
+
+  const fertWarning = document.querySelector('#fertilizing .warning');
+  if (fertWarning) fertWarning.textContent = x.fert_warning;
+
+  const problemWarning = document.querySelector('#problems .danger');
+  if (problemWarning) problemWarning.textContent = x.problem_warning;
+
+  document.querySelectorAll('#journey .journey-step').forEach((el,i) => {
+    if (x.journey_steps[i] !== undefined) el.textContent = x.journey_steps[i];
+  });
+  document.querySelectorAll('#journey .journey-body p').forEach((el,i) => {
+    if (x.journey_desc[i] !== undefined) el.textContent = x.journey_desc[i];
+  });
+}
+
+function setLanguage(lang) {
+  if (!translations[lang]) lang = 'en';
+  document.documentElement.lang = lang;
+  localStorage.setItem('green-language', lang);
+  const selector = document.getElementById('language');
+  if (selector) selector.value = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (translations[lang][key] !== undefined) el.textContent = translations[lang][key];
+  });
+
+  // Translate fertilizing rows.
+  if (lang !== 'en' && blockTranslations[lang]?.fert_rows) {
+    document.querySelectorAll('.fert-row').forEach((row, i) => {
+      const t = blockTranslations[lang].fert_rows[i];
+      if (!t) return;
+      const time = row.querySelector('.fert-time');
+      const divs = row.querySelectorAll(':scope > div');
+      if (time) time.textContent = t[0];
+      if (divs[1]) { divs[1].querySelector('h4').textContent = t[1]; divs[1].querySelector('p').textContent = t[2]; }
+      if (divs[2]) { divs[2].querySelector('h4').textContent = t[3]; divs[2].querySelector('p').textContent = t[4]; }
+    });
+  } else if (lang === 'en') restoreEnglishBlocks();
+
+  // Translate troubleshooting.
+  if (lang !== 'en' && blockTranslations[lang]?.problems) {
+    document.querySelectorAll('#problems details').forEach((d, i) => {
+      const t = blockTranslations[lang].problems[i];
+      if (!t) return;
+      d.querySelector('summary').textContent = t[0];
+      d.querySelector('p').textContent = t[1];
+      const items = t[2].split('|');
+      d.querySelectorAll('li').forEach((li, j) => { if (items[j]) li.textContent = items[j]; });
+    });
+  }
+
+  // Translate calendar bullets.
+  if (lang !== 'en' && blockTranslations[lang]?.calendar_lists) {
+    document.querySelectorAll('.season-card').forEach((card, i) => {
+      const items = blockTranslations[lang].calendar_lists[i] || [];
+      card.querySelectorAll('li').forEach((li, j) => { if (items[j]) li.textContent = items[j]; });
+    });
+  }
+  applyExtraTranslations(lang);
+  updateSeedCalculator();
+  updateFertilizerCalculator();
+}
+
+const englishBlocks = {
+  fertRows: Array.from(document.querySelectorAll('.fert-row')).map(row => row.innerHTML),
+  problems: Array.from(document.querySelectorAll('#problems details')).map(d => d.innerHTML),
+  calendars: Array.from(document.querySelectorAll('.season-card')).map(c => c.innerHTML)
+};
+function restoreEnglishBlocks() {
+  document.querySelectorAll('.fert-row').forEach((row,i)=>row.innerHTML=englishBlocks.fertRows[i]);
+  document.querySelectorAll('#problems details').forEach((d,i)=>d.innerHTML=englishBlocks.problems[i]);
+  document.querySelectorAll('.season-card').forEach((c,i)=>c.innerHTML=englishBlocks.calendars[i]);
+  // restore translated season headings after innerHTML restore
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (translations.en[key] !== undefined) el.textContent = translations.en[key];
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const browserLang = (navigator.language || 'en').slice(0,2).toLowerCase();
+  const supported = ['en','lt','lv','pl','et','de'];
+  const saved = localStorage.getItem('green-language');
+  const initial = supported.includes(saved) ? saved : (supported.includes(browserLang) ? browserLang : 'en');
+  document.getElementById('language').addEventListener('change', e => setLanguage(e.target.value));
+  setLanguage(initial);
+});
+</script>
 
 <script>
   const byId = (id) => document.getElementById(id);
