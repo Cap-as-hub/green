@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://green-lemon-sigma.vercel.app/sitemap.xml
